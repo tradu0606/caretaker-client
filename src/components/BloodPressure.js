@@ -1,24 +1,37 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Bar, Line } from 'react-chartjs-2'
-import { conditionalExpression } from '@babel/types';
+
 
 class BloodPressure extends Component {
     constructor() {
         super()
         this.state = {
-           
-         
-                labels: [],
-                datasets: [{
-                    label: "systolic",
-                    data: []
-                },
-                {
-                    label: "diastolic",
-                    data: []
-                }]
-    
+
+
+            labels: [],
+            datasets: [{
+                fill: false,
+                backgroundColor: "blue",
+                borderColor: "blue",
+                label: "systolic",
+                data: []
+            },
+            {
+                fill: false,
+                backgroundColor: "red",
+                borderColor: "red",
+                label: "diastolic",
+                data: []
+            }],
+            options: {
+                title: {
+                    display: true,
+                    text: "Blood Pressure"
+                }
+                
+            }
+
         }
     }
     newChart = () => {
@@ -35,17 +48,17 @@ class BloodPressure extends Component {
             let dataDiastolic = json.data.map(data => data.diastolic)
             console.log(labels)
             this.setState({
-                
-                    labels: labels,
-                    datasets: [{
-                        label: "systolic",
-                        data: dataSystolic
-                    },
-                    {
-                        label: "diastolic",
-                        data: dataDiastolic
-                    }]
-                
+
+                labels: labels,
+                datasets: [{
+                    label: "systolic",
+                    data: dataSystolic
+                },
+                {
+                    label: "diastolic",
+                    data: dataDiastolic
+                }]
+
             })
             console.log(json)
         })
@@ -53,9 +66,10 @@ class BloodPressure extends Component {
     render() {
         return (
             <div>
-                <h1>Sugar Level</h1>
+                <h1>Blood Pressure</h1>
                 <input type="button" value="Blood Pressure Chart" onClick={this.newChart} />
-                <Line data={this.state} />
+                <div className="chartHolder"><Line data={this.state} /></div>
+                
             </div>
         );
     }
