@@ -2,7 +2,7 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import Home from './components/home/Home';
-import BloodPressure from './components/BloodPressure';
+import BloodPressure from './components/bloodPressure/BloodPressure';
 import Dashboard from './components/dashboard/Dashboard';
 import Navigation from "./components/navigation/navigationLogIn";
 
@@ -14,7 +14,6 @@ class App extends Component {
 			<div className="App">
 
       			<Navigation />
-				<Home />
 
 				<Route path="/dashboard" render={(routerProps) => <Dashboard {...routerProps} />} />
 				<Route path="/bloodpressure" render={(routerProps) => <BloodPressure {...routerProps} />} />
