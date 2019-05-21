@@ -1,0 +1,33 @@
+.form {
+	display: flex;
+	justify-content: center;
+	/* border: 7px solid rgb(57, 54, 54); */
+	border-radius: 8px;
+	margin: 0 auto;
+	width: 30%;
+	background-color: #399d96c2;
+	box-shadow: 5px 5px 5px gray;
+	font-family: 'Quicksand', sans-serif;
+}
+h3 {
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+}
+input {
+	height: 30px;
+	width: 80%;
+	font-size: 20px;
+	margin-left: 9%;
+	margin-bottom: 2%;
+	border-radius: 8px;
+	text-align: center;
+	font-style: italic;
+}
+#signInSubmitButton {
+	padding-bottom: 5%;
+	margin-bottom: 10%;
+	margin-top: 2%;
+	width: 50%;
+	margin-left: 25%;
+}
