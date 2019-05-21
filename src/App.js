@@ -11,9 +11,9 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Home />
 				<Route path="/dashboard" render={(routerProps) => <Dashboard {...routerProps} />} />
 				<Route path="/bloodpressure" render={(routerProps) => <BloodPressure {...routerProps} />} />
+				<Route path="/" render={(routerProps) => <Home {...routerProps} />} />
 			</div>
 		);
 	}
