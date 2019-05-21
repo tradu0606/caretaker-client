@@ -37,6 +37,10 @@ class BloodPressure extends Component {
     newChart = () => {
 
     }
+
+    AddBloodPressure =()=>{
+        axios.put(`http://localhost:3001/bloodpressure/5ce2ef62116c10b9d385c064`,)
+    }
     componentDidMount() {
         axios.get(`http://localhost:3001/bloodpressure/5ce2ef62116c10b9d385c064`, {
             headers: {
@@ -63,11 +67,16 @@ class BloodPressure extends Component {
             console.log(json)
         })
     }
+
     render() {
         return (
             <div>
                 <h1>Blood Pressure</h1>
+                <input type="text" placeholder="systolic"/>
+                <input type="text" placeholder="diastolic"/>
+                <input type="button" value="Add New Blood Pressure Data" onClick={this.AddBloodPressure}/>
                 <input type="button" value="Blood Pressure Chart" onClick={this.newChart} />
+                
                 <div className="chartHolder"><Line data={this.state} /></div>
                 
             </div>
