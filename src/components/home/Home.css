@@ -1,4 +1,8 @@
 .homePageTitle {
-	margin-top: 30%;
+	margin-top: 10%;
 	font-size: 60px;
+}
+.careTakerIconHomePage {
+	width: 10%;
+	height: 10%;
 }
