@@ -1,14 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import BloodPressure from './components/BloodPressure'
+import { Route } from 'react-router-dom';
+import React, { Component } from 'react';
+import Home from './components/home/Home';
+import BloodPressure from './components/BloodPressure';
+import Dashboard from './components/dashboard/Dashboard';
 
-function App() {
-  return (
-    <div className="App">
-        <BloodPressure />
-    </div>
-  );
+// import axios from 'axios';
+
+class App extends Component {
+	render() {
+		return (
+			<div className="App">
+				<Home />
+				<Route path="/dashboard" render={(routerProps) => <Dashboard {...routerProps} />} />
+				<Route path="/bloodpressure" render={(routerProps) => <BloodPressure {...routerProps} />} />
+			</div>
+		);
+	}
 }
 
 export default App;
