@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Dashboard from '../dashboard/Dashboard'
 import careTakerIcon from "../../images/careTakerIcon.png"
 import './navigation.css'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class Navigation extends Component {
 	render() {
