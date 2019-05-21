@@ -7,7 +7,9 @@ import Dashboard from './components/dashboard/Dashboard';
 import Navigation from './components/navigation/navigationLogIn';
 import LogInForm from './components/logInForm/LogInForm';
 import SignUpForm from './components/signUpForm/SignUpForm';
+import Weight from './components/weight/Weight'
 import Doctor from './components/doctors/Doctor';
+
 
 // import axios from 'axios';
 
@@ -22,6 +24,7 @@ class App extends Component {
 				<Route exact path="/" render={(routerProps) => <Home {...routerProps} />} />
 				<Route exact path="/login" render={(routerProps) => <LogInForm {...routerProps} />} />
 				<Route exact path="/signup" render={(routerProps) => <SignUpForm {...routerProps} />} />
+				<Route exact path="/weight" render={(routerProps) => <Weight {...routerProps} />} />
 
 				<Route exact path="/doctors" render={(routerProps) => <Doctor {...routerProps} />} />
 
