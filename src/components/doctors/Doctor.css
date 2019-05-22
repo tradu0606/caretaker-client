@@ -33,6 +33,80 @@ label {
 	font-weight: bolder;
 	margin-left: 30%;
 }
-.addressLabel {
+.addressLabel1 {
 	margin-left: 40%;
+}
+.doctorRecord {
+	background-color: #399d96c2;
+	border-radius: 30px;
+	width: 30%;
+	padding-bottom: 2%;
+	padding-right: 1%;
+}
+.doctorNameOnRecord {
+	text-align: center;
+	padding-top: 4%;
+}
+.leftMargin {
+	margin-left: 3%;
+	margin-right: 3%;
+	color: rgb(201, 92, 34);
+	font-weight: bolder;
+	background-color: rgba(255, 255, 255, 0.571);
+	padding: 3%;
+	width: 90%;
+	border-radius: 12px;
+	font-family: 'Quicksand', sans-serif;
+}
+.paddingBottom {
+	padding-bottom: 2%;
+	margin-bottom: 3%;
+}
+.addressLabel {
+	margin-left: 3%;
+	color: white;
+	font-weight: bolder;
+	width: 90%;
+	border-radius: 12px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	font-family: 'Quicksand', sans-serif;
+}
+.street {
+	margin-right: 3%;
+	margin-left: 3%;
+	color: rgb(201, 92, 34);
+	font-weight: bolder;
+	background-color: rgba(255, 255, 255, 0.571);
+	padding: 3%;
+	width: 90%;
+	border-radius: 12px;
+	margin-top: 1%;
+	font-family: 'Quicksand', sans-serif;
+}
+.doctorLinks {
+	margin-left: 3%;
+	margin-right: 3%;
+	color: rgb(201, 92, 34);
+	font-weight: bolder;
+	background-color: rgba(255, 255, 255, 0.571);
+	width: 90%;
+	border-radius: 12px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: 'Quicksand', sans-serif;
+}
+.doctorLinksContainer {
+	border: 5px solid#399d96c2;
+	background-color: rgba(255, 255, 255, 0.571);
+	width: 30%;
+	height: 20%;
+}
+.doctorsListTitle {
+	color: rgb(201, 92, 34);
+	background-color: rgba(91, 171, 172, 0.571);
+	margin-top: 0;
+	padding-top: 1%;
+	padding-bottom: 1%;
 }
