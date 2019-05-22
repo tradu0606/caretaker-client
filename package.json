@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.8.2",
     "@fortawesome/free-regular-svg-icons": "^5.8.2",
     "axios": "^0.18.0",
     "chart.js": "^2.8.0",
@@ -10,7 +11,9 @@
     "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-simple-timefield": "^2.0.3",
+    "react-time-input": "0.0.19"
   },
   "scripts": {
     "start": "react-scripts start",
