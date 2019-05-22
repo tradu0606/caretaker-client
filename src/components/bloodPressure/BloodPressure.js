@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Bar, Line } from 'react-chartjs-2'
+import './BloodPressure.css'
+import icon from '../../images/bloodPressure.png'
 
 
 class BloodPressure extends Component {
@@ -14,7 +16,7 @@ class BloodPressure extends Component {
             chartOrHistory: null,
             swichButton: "history",
             userID: "5ce2ef62116c10b9d385c064",
-            
+
 
         }
     }
@@ -31,15 +33,20 @@ class BloodPressure extends Component {
         } else {
             var templength = this.state.data.labels.length
             function buidHistory(date, systolic, diastolic) {
-                return (<div>
-                    <p>{date}</p>
-                    <p>{systolic}</p>
-                    <p>{diastolic}</p>
+                return (<div className="dataDiv">
+                    <p className="dataHolder">{date}</p>
+                    <p className="dataHolder">{systolic}</p>
+                    <p className="dataHolder">{diastolic}</p>
                 </div>)
             }
             for (let i = 0; i < templength; i++) {
                 tempReturn.push(buidHistory(this.state.data.labels[i], this.state.data.datasets[0].data[i], this.state.data.datasets[1].data[i]))
             }
+            tempReturn.unshift(<div className="dataDiv dataHeader">
+            <p className="dataHolder">Date</p>
+            <p className="dataHolder">Systolic</p>
+            <p className="dataHolder">Diastolic</p>
+        </div>)
             this.setState({
                 chartOrHistory: tempReturn,
                 swichButton: "chart",
@@ -56,8 +63,8 @@ class BloodPressure extends Component {
         console.log(isNaN(parseFloat(systolic)))
         if (isNaN(parseFloat(systolic)) || isNaN(parseFloat(diastolic))) {
             this.setState({
-                errorStyle:{
-                visibility: "visible"
+                errorStyle: {
+                    visibility: "visible"
                 }
             })
         } else {
@@ -72,11 +79,11 @@ class BloodPressure extends Component {
                         "Content-Type": "application/json"
                     }
                 })
-                this.setState({
-                    errorStyle:{
+            this.setState({
+                errorStyle: {
                     visibility: "hidden"
-                    }
-                })
+                }
+            })
         }
     }
     componentDidMount() {
@@ -112,7 +119,7 @@ class BloodPressure extends Component {
                             display: true,
                             text: "Blood Pressure"
                         }
-    
+
                     }
                 }
             })
@@ -126,15 +133,20 @@ class BloodPressure extends Component {
     render() {
         return (
             <div >
-                <h1>Blood Pressure</h1>
-                <p id="errorMessage" style={this.state.errorStyle}>Please enter a number</p>
-                <input type="text" id="systolic" placeholder="systolic" />
-                <input type="text" id="diastolic" placeholder="diastolic" />
-                <input type="button" value="Add New Blood Pressure Data" onClick={this.AddBloodPressure} />
-                <input type="button" value={this.state.ChartOrLogButton} onClick={this.ChartOrLog} />
-
-                <div className="chartHolder">{this.state.chartOrHistory}</div>
-
+                <h1>Blood Pressure<img className="icon" className="doctorsIcon" src={icon} /></h1>
+                <div className="holder">
+                    <div className="formAppointment">
+                        <p id="errorMessage" style={this.state.errorStyle}>Please enter a number</p>
+                        <input type="text" id="systolic" placeholder="systolic" />
+                        <input type="text" id="diastolic" placeholder="diastolic" />
+                        <input type="button" value="Add New Blood Pressure Data" onClick={this.AddBloodPressure} />
+                        
+                    </div>
+                    <div className="formAppointment">
+                    <input type="button" value={this.state.ChartOrLogButton} onClick={this.ChartOrLog} />
+                        <div className="chartHolder">{this.state.chartOrHistory}</div>
+                    </div>
+                </div>
             </div>
         );
     }
