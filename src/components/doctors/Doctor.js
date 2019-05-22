@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import doctor from '../../images/doctors.png';
 import './Doctor.css';
+import axios from 'axios'
 const URL = 'http://localhost:3001/alls/5ce2d402236655a1648b00f5'
 class Doctor extends Component {
 	constructor(){
 		super();
 		this.state={
-			doctorName ='',
-			doctorSpecialty='',
-			street='',
-			state='',
-			zipcode='',
-			doctorPhone=''
+			doctorName:'',
+			doctorSpecialty:'',
+			street:'',
+			state:'',
+			zipcode:'',
+			doctorPhone:''
 		}
 		this.handleInput=this.handleInput.bind(this)
 		this.handleSubmit=this.handleSubmit.bind(this)

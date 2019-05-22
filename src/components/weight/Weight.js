@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Bar, Line } from 'react-chartjs-2'
+import './Weight.css'
 
 class Weight extends Component {
     constructor() {
@@ -11,7 +12,8 @@ class Weight extends Component {
                 visibility: "hidden"
             },
             userID: "5ce2ef62116c10b9d385c064",
-            weightData: []
+            weightData: [],
+            ChartOrLogButton: "Show Weight Log"
         }
 
     }
@@ -26,13 +28,13 @@ class Weight extends Component {
                 swichButton: "history",
                 ChartOrLogButton: "Show Weight Log"
             })
-            e.target.value = "Blood Pressure Chart"
+
         } else {
             var templength = this.state.data.labels.length
             function buidHistory(date, weight) {
-                return (<div>
-                    <p>{date}</p>
-                    <p>{weight}</p>
+                return (<div className="dataDiv">
+                    <p className="dataHolder">{date}</p>
+                    <p className="dataHolder">{weight}</p>
                 </div>)
             }
             for (let i = 0; i < templength; i++) {
@@ -45,6 +47,7 @@ class Weight extends Component {
             })
         }
     }
+
     // Add new weight data, cheks if data is a number
     AddWeight = (e) => {
         e.preventDefault()
@@ -73,9 +76,10 @@ class Weight extends Component {
                     visibility: "hidden"
                 }
             })
+            document.querySelector('#weight').value = ""
         }
     }
- // Loads weight data from DB
+    // Loads weight data from DB
     componentDidMount() {
         axios.get(`http://localhost:3001/weight/${this.state.userID}`, {
             headers: {
@@ -92,13 +96,13 @@ class Weight extends Component {
                         fill: false,
                         backgroundColor: "blue",
                         borderColor: "blue",
-                        label: "systolic",
+                        label: "weight",
                         data: weightDataTemp
                     }],
                     options: {
                         title: {
                             display: true,
-                            text: "Blood Pressure"
+                            text: "Weight"
                         }
 
                     }
@@ -114,11 +118,19 @@ class Weight extends Component {
         return (
             <div>
                 <h1>Weight</h1>
-                <p id="errorMessage" style={this.state.errorStyle}>Please enter a number</p>
-                <input type="text" id="weight" placeholder="weight" />
-                <input type="button" value="Add New Weight Data" onClick={this.AddWeight} />
-                <input type="button" value="Show weight history" onClick={this.ChartOrLog} />
-                <div>{this.state.chartOrHistory}</div>
+                <div className="holder">
+                    <div className="formAppointment">
+
+                        <p id="errorMessage" style={this.state.errorStyle}>Please enter a number</p>
+                        <input type="text" id="weight" placeholder="weight" />
+                        <input type="button" value="Add New Weight Data" onClick={this.AddWeight} />
+                    </div>
+                    <div className="formAppointment">
+                        <input type="button" value={this.state.ChartOrLogButton} onClick={this.ChartOrLog} />
+                        <div>{this.state.chartOrHistory}</div>
+                    </div>
+
+                </div>
             </div>
         );
     }
