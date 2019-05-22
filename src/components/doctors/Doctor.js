@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import doctor from '../../images/doctors.png';
 import './Doctor.css';
-import axios from 'axios'
-const URL = 'http://localhost:3001/alls/5ce2d402236655a1648b00f5'
+import ViewAllDoctors from './ViewAllDoctors';
+import axios from 'axios';
+import FindOneDoctor from './FindOneDoctor';
+
 class Doctor extends Component {
-	constructor(){
+	constructor() {
 		super();
-		this.state={
-			doctorName:'',
-			doctorSpecialty:'',
-			street:'',
-			state:'',
-			zipcode:'',
-			doctorPhone:''
-		}
-		this.handleInput=this.handleInput.bind(this)
-		this.handleSubmit=this.handleSubmit.bind(this)
+		this.state = {
+			doctorName: '',
+			doctorSpecialty: '',
+			street: '',
+			state: '',
+			zipcode: '',
+			doctorPhone: ''
+		};
+		this.handleInput = this.handleInput.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	handleInput(evt) {
 		let target = evt.target;
@@ -24,31 +26,26 @@ class Doctor extends Component {
 		this.setState({ [name]: value });
 	}
 
-	componentDidMount() {
-		axios.get(URL).then((users) => {
-			console.log(users);
-			this.setState({ userData: users.data });
-		});
-	}
-
-	handleSubmit(){
+	handleSubmit() {
+		const URL = 'http://localhost:3001/doctor/new/5ce2d402236655a1648b00f5';
 		axios
-				.post(URL, {
-					doctorName: this.state.doctorName,
-					doctorSpecialty: this.state.doctorSpecialty,
-					street: this.state.street,
-					state: this.state.state,
-					zipcode: this.state.zipcode,
-					doctorPhone: this.state.doctorPhone
-				})
-				.then(function(response) {
-					console.log(response);
-				})
-				.catch(function(error) {
-					console.log(error);
-				});
+			.put(URL, {
+				doctorName: this.state.doctorName,
+				doctorSpecialty: this.state.doctorSpecialty,
+				street: this.state.street,
+				state: this.state.state,
+				zipcode: this.state.zipcode,
+				doctorPhone: this.state.doctorPhone
+			})
+			.then(function(response) {
+				console.log(response);
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
 	}
 	render() {
+		console.log('Doctor: render');
 		return (
 			<div>
 				<h1>
@@ -58,11 +55,22 @@ class Doctor extends Component {
 					<div className="form">
 						<form>
 							<h3>Add a New Doctor</h3>
-							<input type="text" name='doctorName'placeholder="doctor name" />
-							<label className="addressLabel">Address</label>
-							<input type="text" name='street' placeholder="street" />
-							<input type="text" name='city' placeholder="city" onChange={this.handleInput} />
-							<select name='state' onChange={this.handleInput}>
+							<input
+								type="text"
+								name="doctorName"
+								placeholder="doctor name"
+								onChange={this.handleInput}
+							/>
+							<input
+								type="text"
+								name="doctorSpecialty"
+								placeholder="specialization"
+								onChange={this.handleInput}
+							/>
+							<label className="addressLabel1">Address</label>
+							<input type="text" name="street" placeholder="street" onChange={this.handleInput} />
+							<input type="text" name="city" placeholder="city" onChange={this.handleInput} />
+							<select name="state" onChange={this.handleInput}>
 								<option value="AL">AL</option>
 								<option value="AK">AK</option>
 								<option value="AR">AR</option>
@@ -128,19 +136,24 @@ class Doctor extends Component {
 								type="tel"
 								placeholder="phone"
 								name="doctorPhone"
-								pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+								// pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
 								required
 								onChange={this.handleInput}
 							/>
-							<input type="text" placeholder="medication perscribed" onChange={this.handleInput}/>
+							{/* <input type="text" placeholder="medication perscribed" onChange={this.handleInput} />
 							<label>Next Appointment</label>
-							<input type="date" placeholder="appointment" onChange={this.handleInput} />
-							<input type="submit" className="doctorSubmitButton" value="submit" onChange={this.handleInput}/>
+							<input type="date" placeholder="appointment" onChange={this.handleInput} /> */}
+							<input
+								type="submit"
+								className="doctorSubmitButton"
+								value="submit"
+								onClick={this.handleSubmit}
+							/>
 						</form>
 					</div>
 				</div>
-				<div className='viewAllDoctors'>
-
+				<div className="viewAllDoctors">
+					<ViewAllDoctors />
 				</div>
 			</div>
 		);
