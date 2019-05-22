@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Bar, Line } from 'react-chartjs-2'
 import './Weight.css'
+import icon from '../../images/weight.png'
 
 class Weight extends Component {
     constructor() {
@@ -40,6 +41,10 @@ class Weight extends Component {
             for (let i = 0; i < templength; i++) {
                 tempReturn.push(buidHistory(this.state.data.labels[i], this.state.data.datasets[0].data[i]))
             }
+            tempReturn.unshift(<div className="dataDiv dataHeader">
+                <p className="dataHolder">Date</p>
+                <p className="dataHolder">Weight</p>
+            </div>)
             this.setState({
                 chartOrHistory: tempReturn,
                 swichButton: "chart",
@@ -57,7 +62,8 @@ class Weight extends Component {
             this.setState({
                 errorStyle: {
                     visibility: "visible"
-                }
+                },
+                errorMessage: "Please enter a number"
             })
         } else {
             axios.put(`http://localhost:3001/weight/${this.state.userID}`,
@@ -73,8 +79,9 @@ class Weight extends Component {
             )
             this.setState({
                 errorStyle: {
-                    visibility: "hidden"
-                }
+                    visibility: "visible"
+                },
+                errorMessage: "Added"
             })
             document.querySelector('#weight').value = ""
         }
@@ -114,15 +121,23 @@ class Weight extends Component {
             console.log(json)
         })
     }
+    hideMessage = () => {
+        this.setState({
+            errorStyle: {
+                visibility: "hidden"
+            }
+        })
+
+    }
     render() {
         return (
             <div>
-                <h1>Weight</h1>
+                <h1>Weight<img className="icon" className="doctorsIcon" src={icon} /></h1> 
                 <div className="holder">
                     <div className="formAppointment">
 
-                        <p id="errorMessage" style={this.state.errorStyle}>Please enter a number</p>
-                        <input type="text" id="weight" placeholder="weight" />
+                        <p id="errorMessage" style={this.state.errorStyle}>{this.state.errorMessage}</p>
+                        <input type="text" id="weight" placeholder="weight" onChange={this.hideMessage} />
                         <input type="button" value="Add New Weight Data" onClick={this.AddWeight} />
                     </div>
                     <div className="formAppointment">
