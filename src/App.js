@@ -9,6 +9,7 @@ import LogInForm from './components/logInForm/LogInForm';
 import SignUpForm from './components/signUpForm/SignUpForm';
 import Weight from './components/weight/Weight';
 import Doctor from './components/doctors/Doctor';
+import DailyNote from './components/dailyNotes/DailyNote';
 import BloodSugar from './components/bloodSugar/BloodSugar';
 import Medications from './components/medications/Medications';
 import Appointment from './components/Appointments/Appointments';
@@ -68,6 +69,12 @@ class App extends Component {
 					exact
 					path="/bloodsugar"
 					render={(routerProps) => <BloodSugar {...routerProps} />}
+					userID={this.state.userID}
+				/>
+				<Route
+					exact
+					path="/notes"
+					render={(routerProps) => <DailyNote {...routerProps} />}
 					userID={this.state.userID}
 				/>
 				{/* <Route
