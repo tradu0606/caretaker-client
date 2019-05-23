@@ -3,7 +3,6 @@ import doctor from '../../images/doctors.png';
 import './Doctor.css';
 import ViewAllDoctors from './ViewAllDoctors';
 import axios from 'axios';
-import FindOneDoctor from './FindOneDoctor';
 
 class Doctor extends Component {
 	constructor() {
@@ -27,7 +26,7 @@ class Doctor extends Component {
 	}
 
 	handleSubmit() {
-		const URL = 'http://localhost:3001/doctor/new/5ce2d402236655a1648b00f5';
+		const URL = `http://localhost:3001/doctor/new/${this.props.userID}`;
 		axios
 			.put(URL, {
 				doctorName: this.state.doctorName,
@@ -47,113 +46,115 @@ class Doctor extends Component {
 	render() {
 		console.log('Doctor: render');
 		return (
-			<div>
+			<div className="formatDoctorsPage">
 				<h1>
 					Doctors <img className="doctorsIcon" src={doctor} />
 				</h1>
-				<div>
-					<div className="form">
-						<form>
-							<h3>Add a New Doctor</h3>
-							<input
-								type="text"
-								name="doctorName"
-								placeholder="doctor name"
-								onChange={this.handleInput}
-							/>
-							<input
-								type="text"
-								name="doctorSpecialty"
-								placeholder="specialization"
-								onChange={this.handleInput}
-							/>
-							<label className="addressLabel1">Address</label>
-							<input type="text" name="street" placeholder="street" onChange={this.handleInput} />
-							<input type="text" name="city" placeholder="city" onChange={this.handleInput} />
-							<select name="state" onChange={this.handleInput}>
-								<option value="AL">AL</option>
-								<option value="AK">AK</option>
-								<option value="AR">AR</option>
-								<option value="AZ">AZ</option>
-								<option value="CA">CA</option>
-								<option value="CO">CO</option>
-								<option value="CT">CT</option>
-								<option value="DC">DC</option>
-								<option value="DE">DE</option>
-								<option value="FL">FL</option>
-								<option value="GA">GA</option>
-								<option value="HI">HI</option>
-								<option value="IA">IA</option>
-								<option value="ID">ID</option>
-								<option value="IL">IL</option>
-								<option value="IN">IN</option>
-								<option value="KS">KS</option>
-								<option value="KY">KY</option>
-								<option value="LA">LA</option>
-								<option value="MA">MA</option>
-								<option value="MD">MD</option>
-								<option value="ME">ME</option>
-								<option value="MI">MI</option>
-								<option value="MN">MN</option>
-								<option value="MO">MO</option>
-								<option value="MS">MS</option>
-								<option value="MT">MT</option>
-								<option value="NC">NC</option>
-								<option value="NE">NE</option>
-								<option value="NH">NH</option>
-								<option value="NJ">NJ</option>
-								<option value="NM">NM</option>
-								<option value="NV">NV</option>
-								<option value="NY">NY</option>
-								<option value="ND">ND</option>
-								<option value="OH">OH</option>
-								<option value="OK">OK</option>
-								<option value="OR">OR</option>
-								<option value="PA">PA</option>
-								<option value="RI">RI</option>
-								<option value="SC">SC</option>
-								<option value="SD">SD</option>
-								<option value="TN">TN</option>
-								<option value="TX">TX</option>
-								<option value="UT">UT</option>
-								<option value="VT">VT</option>
-								<option value="VA">VA</option>
-								<option value="WA">WA</option>
-								<option value="WI">WI</option>
-								<option value="WV">WV</option>
-								<option value="WY">WY</option>
-							</select>
-							<input
-								id="zip"
-								name="zipcode"
-								type="text"
-								className="zipCodeField"
-								placeholder="zipcode"
-								pattern="[0-9]*"
-								onChange={this.handleInput}
-							/>
-							<input
-								type="tel"
-								placeholder="phone"
-								name="doctorPhone"
-								// pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-								required
-								onChange={this.handleInput}
-							/>
-							{/* <input type="text" placeholder="medication perscribed" onChange={this.handleInput} />
+				<div id="containerForBothDivs">
+					<div id="divsContainer">
+						<div className="form1" id="newDoctorForm">
+							<form id="doctorForm">
+								<h3>Add a New Doctor</h3>
+								<input
+									type="text"
+									name="doctorName"
+									placeholder="doctor name"
+									onChange={this.handleInput}
+								/>
+								<input
+									type="text"
+									name="doctorSpecialty"
+									placeholder="specialization"
+									onChange={this.handleInput}
+								/>
+								<label className="addressLabel1">Address</label>
+								<input type="text" name="street" placeholder="street" onChange={this.handleInput} />
+								<input type="text" name="city" placeholder="city" onChange={this.handleInput} />
+								<select name="state" className="select" onChange={this.handleInput}>
+									<option value="AL">AL</option>
+									<option value="AK">AK</option>
+									<option value="AR">AR</option>
+									<option value="AZ">AZ</option>
+									<option value="CA">CA</option>
+									<option value="CO">CO</option>
+									<option value="CT">CT</option>
+									<option value="DC">DC</option>
+									<option value="DE">DE</option>
+									<option value="FL">FL</option>
+									<option value="GA">GA</option>
+									<option value="HI">HI</option>
+									<option value="IA">IA</option>
+									<option value="ID">ID</option>
+									<option value="IL">IL</option>
+									<option value="IN">IN</option>
+									<option value="KS">KS</option>
+									<option value="KY">KY</option>
+									<option value="LA">LA</option>
+									<option value="MA">MA</option>
+									<option value="MD">MD</option>
+									<option value="ME">ME</option>
+									<option value="MI">MI</option>
+									<option value="MN">MN</option>
+									<option value="MO">MO</option>
+									<option value="MS">MS</option>
+									<option value="MT">MT</option>
+									<option value="NC">NC</option>
+									<option value="NE">NE</option>
+									<option value="NH">NH</option>
+									<option value="NJ">NJ</option>
+									<option value="NM">NM</option>
+									<option value="NV">NV</option>
+									<option value="NY">NY</option>
+									<option value="ND">ND</option>
+									<option value="OH">OH</option>
+									<option value="OK">OK</option>
+									<option value="OR">OR</option>
+									<option value="PA">PA</option>
+									<option value="RI">RI</option>
+									<option value="SC">SC</option>
+									<option value="SD">SD</option>
+									<option value="TN">TN</option>
+									<option value="TX">TX</option>
+									<option value="UT">UT</option>
+									<option value="VT">VT</option>
+									<option value="VA">VA</option>
+									<option value="WA">WA</option>
+									<option value="WI">WI</option>
+									<option value="WV">WV</option>
+									<option value="WY">WY</option>
+								</select>
+								<input
+									id="zip"
+									name="zipcode"
+									type="text"
+									className="zipCodeField"
+									placeholder="zipcode"
+									pattern="[0-9]*"
+									onChange={this.handleInput}
+								/>
+								<input
+									type="tel"
+									placeholder="phone"
+									name="doctorPhone"
+									// pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+									required
+									onChange={this.handleInput}
+								/>
+								{/* <input type="text" placeholder="medication perscribed" onChange={this.handleInput} />
 							<label>Next Appointment</label>
 							<input type="date" placeholder="appointment" onChange={this.handleInput} /> */}
-							<input
-								type="submit"
-								className="doctorSubmitButton"
-								value="submit"
-								onClick={this.handleSubmit}
-							/>
-						</form>
+								<input
+									type="submit"
+									className="doctorSubmitButton"
+									value="submit"
+									onClick={this.handleSubmit}
+								/>
+							</form>
+						</div>
 					</div>
-				</div>
-				<div className="viewAllDoctors">
-					<ViewAllDoctors />
+					<div className="viewAllDoctors divsContainer" id="divsContainer">
+						<ViewAllDoctors />
+					</div>
 				</div>
 			</div>
 		);
