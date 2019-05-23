@@ -9,46 +9,72 @@ import LogInForm from './components/logInForm/LogInForm';
 import SignUpForm from './components/signUpForm/SignUpForm';
 import Weight from './components/weight/Weight';
 import Doctor from './components/doctors/Doctor';
-import Appointment from './components/Appointments/Appointments'
-import NavigationUser from './components/navigation/navigationUser'
-import axios from 'axios';
-import FindOneDoctor from './components/doctors/FindOneDoctor';
-// const URL = 'http://localhost:3001/5ce2d402236655a1648b00f5';
-
+import BloodSugar from './components/bloodSugar/BloodSugar';
+import Medications from './components/medications/Medications';
+import Appointment from './components/Appointments/Appointments';
+import NavigationUser from './components/navigation/navigationUser';
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			userData: []
+			userID: ''
 		};
 	}
-	// componentDidMount() {
-	// 	axios.get(URL).then((userData) => {
-	// 		console.log(userData);
-	// 		this.setState({ userData: userData.data });
-	// 	});
-	// }
+
 	render() {
 		return (
 			<div className="App">
-
-
 				<NavigationUser />
 
-				<Route exact path="/dashboard" render={(routerProps) => <Dashboard {...routerProps} />} />
-				<Route exact path="/bloodpressure" render={(routerProps) => <BloodPressure {...routerProps} />} />
-				<Route exact path="/" render={(routerProps) => <Home {...routerProps} />} />
-				<Route exact path="/login" render={(routerProps) => <LogInForm {...routerProps} />} />
-				<Route exact path="/signup" render={(routerProps) => <SignUpForm {...routerProps} />} />
+				<Route
+					exact
+					path="/dashboard"
+					render={(routerProps) => <Dashboard {...routerProps} userID={this.state.userID} />}
+				/>
+				<Route
+					exact
+					path="/bloodpressure"
+					render={(routerProps) => <BloodPressure {...routerProps} userID={this.state.userID} />}
+				/>
+				<Route exact path="/" render={(routerProps) => <Home {...routerProps} />} userID={this.state.userID} />
+				<Route
+					exact
+					path="/login"
+					render={(routerProps) => <LogInForm {...routerProps} />}
+					userID={this.state.userID}
+				/>
+				<Route
+					exact
+					path="/signup"
+					render={(routerProps) => <SignUpForm {...routerProps} />}
+					userID={this.state.userID}
+				/>
 				<Route exact path="/weight" render={(routerProps) => <Weight {...routerProps} />} />
-				<Route exact path="/appointment" render={(routerProps) => <Appointment {...routerProps} />} />
+				<Route
+					exact
+					path="/appointment"
+					render={(routerProps) => <Appointment {...routerProps} />}
+					userID={this.state.userID}
+				/>
 				<Route exact path="/doctors" render={(routerProps) => <Doctor {...routerProps} />} />
 				<Route
 					exact
+					path="/medications"
+					render={(routerProps) => <Medications {...routerProps} />}
+					userID={this.state.userID}
+				/>
+				<Route
+					exact
+					path="/bloodsugar"
+					render={(routerProps) => <BloodSugar {...routerProps} />}
+					userID={this.state.userID}
+				/>
+				{/* <Route
+					exact
 					path="/doctors/:name"
 					render={(routerProps) => <FindOneDoctor {...routerProps} userData={this.state.userData} />}
-				/>
+				/> */}
 			</div>
 		);
 	}
