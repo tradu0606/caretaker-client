@@ -49,13 +49,14 @@ class Appointment extends Component {
             let schema = this.state.schema
             let url = this.state.url
             let id = this.state.id
+            console.log(id)
             let getData = this.getData
             let temp = appointments.data.map(appointment => {
                 return (<tr>
                     <th>{appointment.date}</th>
                     <th>{appointment.date}</th>
                     <th>{appointment.doctorName}</th>
-                    <th><Delete id={id} schema={schema} url={url} getData={getData}/></th>
+                    <th><Delete id={appointment._id} schema={schema} url={url} getData={getData} /></th>
                 </tr>)
             })
             this.setState({
@@ -66,7 +67,7 @@ class Appointment extends Component {
 
     }
 
-    getData=()=>{
+    getData = (e) => {
         axios.put(`http://localhost:3001/appointment/new/${this.state.userID}`, {
             headers: {
                 "Content-Type": "application/json"
@@ -81,7 +82,8 @@ class Appointment extends Component {
         })
 
     }
-    apointmentCreateButton = () => {
+    apointmentCreateButton = (e) => {
+        e.preventDefault()
         this.getData()
     }
 
@@ -96,12 +98,16 @@ class Appointment extends Component {
                     <select id="doctorName">
                         <option value="" >Choose a doctor</option>
                         {this.state.selectOptions}</select>
-                    <Link to='/doctors'> <input type="button" value="Add a Doctor" className="signInFirstNameField" /></Link>
-                    <input type="text" id="purpose" placeholder="purpose" className="signInFirstNameField" />
-                    <input type="date" id="appDate" placeholder="date" className="signUpDoBField" />
-                    <input type="text" id="appTime" placeholder="time" className="signInFirstNameField" />
+                    <form onSubmit={this.apointmentCreateButton}>
+                        <Link to='/doctors'>
+                            <input type="button" value="Add a Doctor" className="signInFirstNameField" />
+                        </Link>
+                        <input type="text" id="purpose" placeholder="purpose" className="signInFirstNameField" />
+                        <input type="date" id="appDate" placeholder="date" className="signUpDoBField" />
+                        <input type="text" id="appTime" placeholder="time" className="signInFirstNameField" />
 
-                    <input id="apointmentCreateButton" type="submit" value="Submit" onClick={this.apointmentCreateButton} />
+                        <input id="apointmentCreateButton" type="submit" value="Submit" />
+                    </form>
                 </div >
 
                 <div className="formAppointment">

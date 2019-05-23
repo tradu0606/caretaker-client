@@ -8,13 +8,11 @@ class Delete extends Component {
         axios.delete(`http://localhost:3001${this.props.url}${this.props.id}`, {
             headers: {
                 "Content-Type": "application/json"
-            },
-            data: {
-                schema: this.props.schema
             }
-        }).then(()=>{
-            this.props.getData()
         })
+        // .then(()=>{
+        //     this.props.getData()
+        // })
         
     }
     render() {
