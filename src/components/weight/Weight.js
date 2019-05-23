@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Bar, Line } from 'react-chartjs-2'
 import './Weight.css'
 import icon from '../../images/weight.png'
+import Delete from '../Delete'
 
 class Weight extends Component {
     constructor() {
@@ -14,9 +15,12 @@ class Weight extends Component {
             },
             userID: "5ce2ef62116c10b9d385c064",
             weightData: [],
-            ChartOrLogButton: "Show Weight Log"
+            ChartOrLogButton: "Show Weight Log",
+            id: [],
+            schema: "WeightModel",
+            url: "/weight/"
         }
-
+        this.ChartOrLog = this.ChartOrLog.bind(this)
     }
     // Blood Pressure Chart/Blood Pressure Log button functionality
     ChartOrLog = (e) => {
@@ -32,14 +36,18 @@ class Weight extends Component {
 
         } else {
             var templength = this.state.data.labels.length
-            function buidHistory(date, weight) {
+            let schema = this.state.schema
+            let url = this.state.url
+            function buidHistory(date, weight, id) {
+                console.log(this)
                 return (<div className="dataDiv">
                     <p className="dataHolder">{date}</p>
                     <p className="dataHolder">{weight}</p>
+                    <Delete id={id} schema={schema} url={url}/>
                 </div>)
             }
             for (let i = 0; i < templength; i++) {
-                tempReturn.push(buidHistory(this.state.data.labels[i], this.state.data.datasets[0].data[i]))
+                tempReturn.push(buidHistory(this.state.data.labels[i], this.state.data.datasets[0].data[i], this.state.id[i]))
             }
             tempReturn.unshift(<div className="dataDiv dataHeader">
                 <p className="dataHolder">Date</p>
@@ -95,6 +103,7 @@ class Weight extends Component {
         }).then(json => {
             let weightDataTemp = json.data.map(data => data.weight)
             let dateTemp = json.data.map(data => data.date.toString().replace("T", " ").slice(0, 16))
+            let idTemp = json.data.map(data => data._id)
 
             this.setState({
                 data: {
@@ -113,7 +122,8 @@ class Weight extends Component {
                         }
 
                     }
-                }
+                },
+                id: idTemp
             })
             this.setState({
                 chartOrHistory: <Line data={this.state.data} />

@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Bar, Line } from 'react-chartjs-2'
 import './BloodPressure.css'
 import icon from '../../images/bloodPressure.png'
+import Delete from '../Delete'
 
 
 class BloodPressure extends Component {
@@ -15,7 +16,33 @@ class BloodPressure extends Component {
             ChartOrLogButton: "Show Blood Pressure Log",
             chartOrHistory: null,
             swichButton: "history",
-            userID: "5ce2ef62116c10b9d385c064",
+            userID: "5ce2ef62116c10b9d385c064",            
+            id: [],
+            schema: "BloodPressureModel",
+            url: "/bloodpressure/",
+            data: {labels: [],
+                datasets: [{
+                    fill: false,
+                    backgroundColor: "blue",
+                    borderColor: "blue",
+                    label: "systolic",
+                    data: []
+                },
+                {
+                    fill: false,
+                    backgroundColor: "red",
+                    borderColor: "red",
+                    label: "diastolic",
+                    data: []
+                }],
+                options: {
+                    title: {
+                        display: true,
+                        text: "Blood Pressure"
+                    }
+
+                }
+            }
 
 
         }
@@ -31,21 +58,27 @@ class BloodPressure extends Component {
             })
             e.target.value = "Blood Pressure Chart"
         } else {
-            var templength = this.state.data.labels.length
-            function buidHistory(date, systolic, diastolic) {
+            console.log(this.state.id)
+            let schema = this.state.schema
+            let url = this.state.url
+            let templength = this.state.data.labels.length
+            let getData = this.getData
+            function buidHistory(date, systolic, diastolic, id) {
                 return (<div className="dataDiv">
                     <p className="dataHolder">{date}</p>
                     <p className="dataHolder">{systolic}</p>
                     <p className="dataHolder">{diastolic}</p>
+                    <Delete id={id} schema={schema} url={url} getData={getData}/>
                 </div>)
             }
             for (let i = 0; i < templength; i++) {
-                tempReturn.push(buidHistory(this.state.data.labels[i], this.state.data.datasets[0].data[i], this.state.data.datasets[1].data[i]))
+                tempReturn.push(buidHistory(this.state.data.labels[i], this.state.data.datasets[0].data[i], this.state.data.datasets[1].data[i], this.state.id[i]))
             }
             tempReturn.unshift(<div className="dataDiv dataHeader">
             <p className="dataHolder">Date</p>
             <p className="dataHolder">Systolic</p>
             <p className="dataHolder">Diastolic</p>
+            <p className="dataHolder"></p>
         </div>)
             this.setState({
                 chartOrHistory: tempReturn,
@@ -86,7 +119,7 @@ class BloodPressure extends Component {
             })
         }
     }
-    componentDidMount() {
+    getData=()=>{
         axios.get(`http://localhost:3001/bloodpressure/${this.state.userID}`, {
             headers: {
                 "Content-Type": "application/json"
@@ -95,9 +128,10 @@ class BloodPressure extends Component {
             let labels = json.data.map(data => data.date.toString().replace("T", " ").slice(0, 16))
             let dataSystolic = json.data.map(data => data.systolic)
             let dataDiastolic = json.data.map(data => data.diastolic)
+            let id = json.data.map(data => data._id)
             console.log(labels)
             this.setState({
-
+                id: id,
                 data: {
                     labels: labels,
                     datasets: [{
@@ -123,11 +157,15 @@ class BloodPressure extends Component {
                     }
                 }
             })
+            if (this.state.chartOrHistory === null){
             this.setState({
                 chartOrHistory: <Line data={this.state.data} />
-            })
-            console.log(this.state.chartOrHistory)
+            })}
         })
+    }
+    componentDidMount() {
+        this.getData()
+
     }
 
     render() {
