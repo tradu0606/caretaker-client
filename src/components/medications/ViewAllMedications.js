@@ -36,8 +36,8 @@ class ViewAllMedications extends Component {
 				medication = <p>Pick a Medication</p>;
 			}
 			return (
-				<div className="doctorLinksContainer">
-					<h3 className="doctorsListTitle">Your Medications</h3>
+				<div className="medicationLinksContainer">
+					<h3 className="medicationsListTitle">Your Medications</h3>
 					{this.state.userMedications.map((medication, i) => {
 						return (
 							<FindOneMedication
@@ -52,31 +52,6 @@ class ViewAllMedications extends Component {
 		} else {
 			return <p>Pick a Medication</p>;
 		}
-		// console.log(this.state.selectDoctor);
-		// let selectDoctor;
-		// if (this.state.selectDoctor) {
-		// 	console.log('triggered');
-		// 	selectDoctor = (
-		// 		<FindOneDoctor selectDoctor={this.state.selectDoctor} userDoctors={this.state.userDoctors} />
-		// 	);
-		// } else {
-		// 	selectDoctor = null;
-		// }
-		// return (
-		// 	<div>
-		// 		<div className="doctorLinksContainer">
-		// 			<h3 className="doctorsListTitle">Your Doctors</h3>
-		// 			{this.state.userDoctors.map((doctor, i) => {
-		// 				return (
-		// 					<h2 onClick={this.handleClick} className="doctorLinks">
-		// 						{doctor.doctorName}
-		// 					</h2>
-		// 				);
-		// 			})}
-		// 		</div>
-		// 		{selectDoctor}
-		// 	</div>
-		// );
 	}
 }
 

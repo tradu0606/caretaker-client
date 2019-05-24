@@ -168,26 +168,36 @@ class BloodPressure extends Component {
 
     }
 
-    render() {
-        return (
-            <div >
-                <h1>Blood Pressure<img className="icon" className="doctorsIcon" src={icon} /></h1>
-                <div className="holder">
-                    <div className="formAppointment">
-                        <p id="errorMessage" style={this.state.errorStyle}>Please enter a number</p>
-                        <input type="text" id="systolic" placeholder="systolic" />
-                        <input type="text" id="diastolic" placeholder="diastolic" />
-                        <input type="button" value="Add New Blood Pressure Data" onClick={this.AddBloodPressure} />
-                        
-                    </div>
-                    <div className="formAppointment">
-                    <input type="button" value={this.state.ChartOrLogButton} onClick={this.ChartOrLog} />
-                        <div className="chartHolder">{this.state.chartOrHistory}</div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+
+	render() {
+		return (
+			<div>
+				<h1>
+					Blood Pressure<img className="icon" className="doctorsIcon" src={icon} />
+				</h1>
+				<div className="holder">
+					<div className="formAppointment">
+						<h3>Add a New BP Messure</h3>
+						<p id="errorMessage" style={this.state.errorStyle}>
+							Please enter a number
+						</p>
+						<input type="text" id="systolic" placeholder="systolic" />
+						<input type="text" id="diastolic" placeholder="diastolic" />
+						<input type="button" value="submit" className="toggleButton" onClick={this.AddBloodPressure} />
+					</div>
+					<div className="formAppointment">
+						<input
+							type="button"
+							className="toggleButton"
+							value={this.state.ChartOrLogButton}
+							onClick={this.ChartOrLog}
+						/>
+						<div className="chartHolder">{this.state.chartOrHistory}</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default BloodPressure;

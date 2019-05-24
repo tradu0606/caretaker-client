@@ -37,8 +37,8 @@ class FindOneNote extends Component {
 			noteDetails = <p> </p>;
 		}
 		return (
-			<div className="doctorRecord">
-				<h3 onClick={this.selectNote} id={this.props.name} className="doctorNameOnRecord">
+			<div className="dailyNoteRecord">
+				<h3 onClick={this.selectNote} id={this.props.name} className="dailyNoteNameOnRecord">
 					{this.props.name}
 					<FontAwesomeIcon className="chevronIcon" icon="chevron-down" />
 				</h3>

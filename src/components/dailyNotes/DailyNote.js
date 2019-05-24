@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import dailyNote from '../../images/dailyNote.png';
 import axios from 'axios';
-import '../doctors/Doctor.css';
+import '../dailyNotes/DailyNote.css';
 import ViewAllNotes from './ViewAllNotes';
 class DailyNote extends Component {
 	constructor() {
@@ -38,29 +38,31 @@ class DailyNote extends Component {
 		return (
 			<div>
 				<h1>
-					Daily Notes <img className="doctorsIcon" src={dailyNote} />
+					Daily Notes <img className="dailyNoteIcon" src={dailyNote} />
 				</h1>
-				<div className="form1">
-					<form id="doctorForm">
-						<h3>Today's date</h3>
-						<input type="date" name="date" onChange={this.handleInput} />
-						<h3>Add a note about how you're feeling today:</h3>
-						<input
-							type="text"
-							name="symptoms"
-							placeholder="log your symptoms"
-							onChange={this.handleInput}
-						/>
-						<input
-							type="submit"
-							className="doctorSubmitButton"
-							value="submit"
-							onClick={this.handleSubmit}
-						/>
-					</form>
-				</div>
-				<div>
-					<ViewAllNotes />
+				<div id="containerForBothDivs">
+					<div className="dailyNoteFormDiv">
+						<form id="dailyNoteForm">
+							<h3>Today's date</h3>
+							<input type="date" name="date" onChange={this.handleInput} />
+							<h3>Add a note about how you're feeling today:</h3>
+							<input
+								type="text"
+								name="symptoms"
+								placeholder="log your symptoms"
+								onChange={this.handleInput}
+							/>
+							<input
+								type="submit"
+								className="dailyNoteSubmitButton"
+								value="submit"
+								onClick={this.handleSubmit}
+							/>
+						</form>
+					</div>
+					<div className="viewAllNotes">
+						<ViewAllNotes />
+					</div>
 				</div>
 			</div>
 		);

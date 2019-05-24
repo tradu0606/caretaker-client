@@ -74,7 +74,7 @@ class BloodSugar extends Component {
 					options: {
 						title: {
 							display: true,
-							text: 'Blood Pressure'
+							text: 'Blood Sugar'
 						}
 					}
 				}
@@ -149,7 +149,7 @@ class BloodSugar extends Component {
 							name="sugarLevelAfterMeal"
 							onChange={this.handleInput}
 						/>
-						<input type="submit" value="submit" onClick={this.handleSubmit} />
+						<input type="submit" value="submit" className="toggleButton" onClick={this.handleSubmit} />
 					</form>
 				</div>
 				<div className="chartContainer">

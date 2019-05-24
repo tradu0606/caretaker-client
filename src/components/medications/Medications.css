@@ -1,28 +1,9 @@
-.doctorsIcon {
+.medicationsIcon {
 	height: 5%;
 	width: 5%;
 }
-.zipCodeField {
-	height: 30px;
-	width: 45%;
-	font-size: 20px;
-	margin-left: 10%;
-	margin-bottom: 2%;
-	border-radius: 8px;
-	text-align: center;
-	font-style: italic;
-}
-.select {
-	height: 30px;
-	width: 20%;
-	font-size: 20px;
-	margin-left: 9%;
-	margin-bottom: 2%;
-	border-radius: 8px;
-	text-align: center;
-	font-style: italic;
-}
-.doctorSubmitButton {
+
+.medicationSubmitButton {
 	width: 40%;
 	margin-left: 30%;
 	margin-bottom: 5%;
@@ -33,34 +14,23 @@
 	font-weight: bolder;
 	box-shadow: 5px 5px 5px gray;
 }
-.doctorSubmitButton:hover {
+.medicationSubmitButton:hover {
 	background-color: #399d96c2;
 }
-label {
-	color: white;
-	font-weight: bolder;
-	margin-left: 30%;
-}
-.addressLabel1 {
-	margin-left: 40%;
-}
-.doctorRecord {
+
+.medicationRecord {
 	background-color: #399d96c2;
-	/* background-color: radial-gradient(rgb(118, 188, 196), rgb(82, 157, 171)); */
 	border-radius: 20px;
 	width: 90%;
 	padding-bottom: 2%;
-	/* padding-right: 1%; */
-	/* margin-left: 2%;
-	margin-right: 12%; */
 	box-shadow: 5px 5px 5px gray;
 	margin: 0 auto;
 }
-.doctorNameOnRecord {
+.medicationNameOnRecord {
 	text-align: center;
 	padding-top: 4%;
 }
-.doctorNameOnRecord:hover {
+.medicationNameOnRecord:hover {
 	color: rgb(201, 92, 34);
 }
 .leftMargin {
@@ -78,30 +48,8 @@ label {
 	padding-bottom: 2%;
 	margin-bottom: 3%;
 }
-.addressLabel {
-	margin-left: 3%;
-	color: white;
-	font-weight: bolder;
-	width: 90%;
-	border-radius: 12px;
-	margin: 0 auto;
-	padding: 0;
-	text-align: center;
-	font-family: 'Quicksand', sans-serif;
-}
-.street {
-	margin-right: 3%;
-	margin-left: 3%;
-	color: rgb(201, 92, 34);
-	font-weight: bolder;
-	background-color: rgba(255, 255, 255, 0.571);
-	padding: 3%;
-	width: 90%;
-	border-radius: 12px;
-	margin-top: 1%;
-	font-family: 'Quicksand', sans-serif;
-}
-.doctorLinks {
+
+.medicationLinks {
 	margin-left: 3%;
 	margin-right: 3%;
 	color: rgb(201, 92, 34);
@@ -113,7 +61,7 @@ label {
 	margin-bottom: 0;
 	font-family: 'Quicksand', sans-serif;
 }
-.doctorLinksContainer {
+.medicationLinksContainer {
 	/* border: 5px solid#399d96c2; */
 	background-color: rgba(255, 255, 255, 0.571);
 	/* width: 30%; */
@@ -121,7 +69,7 @@ label {
 	display: block;
 	margin-top: 0;
 }
-.doctorsListTitle {
+.medicationsListTitle {
 	color: rgb(201, 92, 34);
 	background-color: rgba(91, 171, 172, 0.571);
 	margin-top: 0;
@@ -132,9 +80,6 @@ label {
 	color: rgb(201, 92, 34);
 	margin-left: 1%;
 }
-#newDoctorForm {
-	width: 50%;
-}
 
 #containerForBothDivs {
 	display: flex;
@@ -142,10 +87,7 @@ label {
 	align-content: center;
 }
 
-.doctorFormDiv {
-	/* display: flex;
-	justify-content: center; */
-	/* border: 7px solid rgb(57, 54, 54); */
+.medicationFormDiv {
 	border-radius: 8px;
 	width: 30%;
 	height: 50%;
@@ -154,7 +96,7 @@ label {
 	font-family: 'Quicksand', sans-serif;
 	margin-right: 10%;
 }
-.viewAllDoctors {
+.viewAllMedications {
 	width: 50%;
 	border: 5px solid #399d96c2;
 }

@@ -159,6 +159,7 @@ class Weight extends Component {
             </div>
         );
     }
+
 }
 
 export default Weight;
