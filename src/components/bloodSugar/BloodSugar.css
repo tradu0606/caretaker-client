@@ -18,6 +18,7 @@
 	height: 50%;
 	width: 50%;
 	border-radius: 20px;
+	padding-bottom: 2%;
 }
 .toggleButton {
 	background-color: #e5593a;
@@ -38,4 +39,22 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
+}
+.dataDiv {
+	margin: 0 auto;
+	width: auto;
+	text-align: center;
+}
+p {
+	margin-right: 2%;
+	margin-left: 2%;
+	color: rgb(83, 82, 82);
+}
+/* .dataHolder {
+	width: auto;
+} */
+.dataHeader {
+	margin: 0 auto;
+	width: auto;
+	text-align: center;
 }
