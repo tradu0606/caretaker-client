@@ -13,7 +13,7 @@ class Weight extends Component {
             errorStyle: {
                 visibility: "hidden"
             },
-            userID: this.props.userID,
+            // userID: this.props.userID,
             weightData: [],
             ChartOrLogButton: "Show Weight Log",
             id: [],
@@ -74,7 +74,7 @@ class Weight extends Component {
                 errorMessage: "Please enter a number"
             })
         } else {
-            axios.put(`https://care-taker-app.herokuapp.com/weight/${this.state.userID}`,
+            axios.put(`https://care-taker-app.herokuapp.com/weight/${this.props.userID}`,
                 {
                     data: {
                         weight: weight,
@@ -96,7 +96,7 @@ class Weight extends Component {
     }
     // Loads weight data from DB
     componentDidMount() {
-        axios.get(`https://care-taker-app.herokuapp.com/weight/${this.state.userID}`, {
+        axios.get(`https://care-taker-app.herokuapp.com/weight/${this.props.userID}`, {
             headers: {
                 "Content-Type": "application/json"
             }

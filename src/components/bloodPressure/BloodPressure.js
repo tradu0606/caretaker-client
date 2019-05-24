@@ -7,8 +7,8 @@ import Delete from '../Delete'
 
 
 class BloodPressure extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             errorStyle: {
                 visibility: "hidden"
@@ -16,7 +16,7 @@ class BloodPressure extends Component {
             ChartOrLogButton: "Show Blood Pressure Log",
             chartOrHistory: null,
             swichButton: "history",
-            userID: this.props.userID,            
+            // userID: this.props.userID,            
             id: [],
             schema: "BloodPressureModel",
             url: "/bloodpressure/",
@@ -47,6 +47,7 @@ class BloodPressure extends Component {
 
         }
     }
+
     ChartOrLog = (e) => {
         e.preventDefault()
         var tempReturn = []
@@ -101,7 +102,7 @@ class BloodPressure extends Component {
                 }
             })
         } else {
-            axios.put(`https://care-taker-app.herokuapp.com/bloodpressure/${this.state.userID}`,
+            axios.put(`https://care-taker-app.herokuapp.com/bloodpressure/${this.props.userID}`,
                 {
                     data: {
                         systolic: systolic,
@@ -120,7 +121,7 @@ class BloodPressure extends Component {
         }
     }
     getData=()=>{
-        axios.get(`https://care-taker-app.herokuapp.com/bloodpressure/${this.state.userID}`, {
+        axios.get(`https://care-taker-app.herokuapp.com/bloodpressure/${this.props.userID}`, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -165,6 +166,7 @@ class BloodPressure extends Component {
     }
     componentDidMount() {
         this.getData()
+
 
     }
 

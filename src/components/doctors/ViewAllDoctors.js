@@ -10,13 +10,13 @@ class ViewAllDoctors extends Component {
 		this.state = {
 			userDoctors: [],
 			selectDoctor: '',
-			userID: this.props.userID
+			// userID: this.props.userID
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
 	componentDidMount() {
 		console.log('ViewAllDoctors: componentDidMount');
-		axios.get(`https://care-taker-app.herokuapp.com/doctor/all/${this.state.userID}`).then((userDoctors) => {
+		axios.get(`https://care-taker-app.herokuapp.com/doctor/all/${this.props.userID}`).then((userDoctors) => {
 			console.log(userDoctors);
 			this.setState({ userDoctors: userDoctors.data });
 		});

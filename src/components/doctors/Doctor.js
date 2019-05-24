@@ -15,7 +15,7 @@ class Doctor extends Component {
 			state: '',
 			zipcode: '',
 			doctorPhone: '',
-			userID: this.props.userID
+			// userID: this.props.userID
 		};
 		this.handleInput = this.handleInput.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +28,7 @@ class Doctor extends Component {
 	}
 
 	handleSubmit() {
-		const URL = 'https://care-taker-app.herokuapp.com/doctor/new/{this.state.userID}';
+		const URL = 'https://care-taker-app.herokuapp.com/doctor/new/{this.props.userID}';
 		axios
 			.put(URL, {
 				doctorName: this.state.doctorName,
