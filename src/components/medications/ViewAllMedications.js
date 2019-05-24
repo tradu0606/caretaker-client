@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import FindOneMedication from './FindOneMedication';
 
-const URL = 'http://localhost:3001/medication/all/5ce2d402236655a1648b00f5';
 
 class ViewAllMedications extends Component {
 	constructor() {
@@ -15,12 +14,13 @@ class ViewAllMedications extends Component {
 	}
 	componentDidMount() {
 		console.log('ViewAllMedications: componentDidMount');
-		axios.get(URL).then((userMedications) => {
+		axios.get(`https://care-taker-app.herokuapp.com/medication/all/${this.props.userID}`).then((userMedications) => {
 			console.log(userMedications);
 			this.setState({ userMedications: userMedications.data });
 		});
 	}
 	handleClick(event) {
+		event.preventDefault()
 		console.log('ViewAllMedications: handleClick');
 		console.log(event.target.name);
 		this.setState({ selectMedication: event.target.name });
