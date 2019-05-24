@@ -9,19 +9,23 @@ import LogInForm from './components/logInForm/LogInForm';
 import SignUpForm from './components/signUpForm/SignUpForm';
 import Weight from './components/weight/Weight'
 import Doctor from './components/doctors/Doctor';
-import Appointment from './components/Appointments/Appointments'
-import NavigationUser from './components/navigation/navigationUser'
+import DailyNote from './components/dailyNotes/DailyNote';
+import BloodSugar from './components/bloodSugar/BloodSugar';
+import Medications from './components/medications/Medications';
+import Appointment from './components/Appointments/Appointments';
+import NavigationUser from './components/navigation/navigationUser';
 
-
-// import axios from 'axios';
 
 class App extends Component {
 	constructor(){
 		super()
 		this.state = {
+
 			userID: ""
 		}
 	}
+
+
 	render() {
 		return (
 			<div className="App">
@@ -35,9 +39,24 @@ class App extends Component {
 				<Route exact path="/weight" render={(routerProps) => <Weight {...routerProps} userID={this.state.userID}/>} />
 				<Route exact path="/appointment" render={(routerProps) => <Appointment {...routerProps} userID={this.state.userID}/>} />
 				<Route exact path="/doctors" render={(routerProps) => <Doctor {...routerProps} userID={this.state.userID}/>} />
-
-
-
+			<Route
+					exact
+					path="/medications"
+					render={(routerProps) => <Medications {...routerProps} />}
+					userID={this.state.userID}
+				/>
+				<Route
+					exact
+					path="/bloodsugar"
+					render={(routerProps) => <BloodSugar {...routerProps} />}
+					userID={this.state.userID}
+				/>
+				<Route
+					exact
+					path="/notes"
+					render={(routerProps) => <DailyNote {...routerProps} />}
+					userID={this.state.userID}
+				/>
 
 			</div>
 		);
