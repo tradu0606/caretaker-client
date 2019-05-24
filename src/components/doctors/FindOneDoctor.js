@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+library.add(faChevronDown);
 
 class FindOneDoctor extends Component {
 	constructor(props) {
@@ -49,6 +53,7 @@ class FindOneDoctor extends Component {
 			<div className="doctorRecord">
 				<h3 onClick={this.selectDoctor} id={this.props.name} className="doctorNameOnRecord">
 					{this.props.name}
+					<FontAwesomeIcon className="chevronIcon" icon="chevron-down" />
 				</h3>
 				{doctorDetails}
 				{/* <h4 className="leftMargin"> Specialization: {singleDoctor.doctorSpecialty}</h4>
