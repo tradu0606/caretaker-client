@@ -16,10 +16,11 @@ class FindOneNote extends Component {
 		console.log('FindOneNote: selectNote');
 		console.log(this.props.notes);
 		let selectedNote = this.props.notes.filter((note) => {
-			return note.date === evt.target.id;
+			return note.date === this.props.name;
 		});
+		console.log(evt.target.value)
 		console.log(selectedNote);
-		this.setState({ selectedNote: selectedNote });
+		this.setState({ selectedNote: selectedNote[0] });
 		console.log(this.state.selectedNote);
 	}
 	render() {

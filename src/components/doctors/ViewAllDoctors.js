@@ -40,7 +40,7 @@ class ViewAllDoctors extends Component {
 				<div className="doctorLinksContainer">
 					<h3 className="doctorsListTitle">Your Doctors</h3>
 					{this.state.userDoctors.map((doctor, i) => {
-						return <FindOneDoctor doctors={this.state.userDoctors} key={i} name={doctor.doctorName} />;
+						return <FindOneDoctor userID={this.props.userID} doctors={this.state.userDoctors} key={i} name={doctor.doctorName} />;
 					})}
 				</div>
 			);

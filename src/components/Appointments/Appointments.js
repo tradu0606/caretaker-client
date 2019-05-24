@@ -54,7 +54,7 @@ class Appointment extends Component {
             let temp = appointments.data.map(appointment => {
                 return (<tr>
                     <th>{appointment.date}</th>
-                    <th>{appointment.date}</th>
+                    <th>{appointment.time}</th>
                     <th>{appointment.doctorName}</th>
                     <th><Delete id={appointment._id} schema={schema} url={url} getData={getData} /></th>
                 </tr>)
@@ -68,7 +68,7 @@ class Appointment extends Component {
     }
 
     getData = (e) => {
-        axios.put(`https://care-taker-app.herokuapp.com/new/${this.props.userID}`, {
+        axios.put(`https://care-taker-app.herokuapp.com/appointment/new/${this.props.userID}`, {
             headers: {
                 "Content-Type": "application/json"
             },
@@ -80,7 +80,7 @@ class Appointment extends Component {
 
             }
         })
-
+console.log(document.querySelector("#doctorName").value)
     }
     apointmentCreateButton = (e) => {
         e.preventDefault()

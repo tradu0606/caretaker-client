@@ -13,8 +13,10 @@ class NavigationUser extends Component {
 				<Link to="/"><img alt="careTakerIcon" id="careTakerIcon" src={careTakerIcon} /></Link>
 				<Link to="/" className="loginNav" id="CareTaker"> CareTaker </Link>
                 <Link to="/account" className="loginNav" >Account</Link>
-				<Link to="/logout" className="loginNav" >Log Out</Link>
+				<Link to="/note" className="loginNav" >Notes</Link>
+				<Link to="/medication" className="loginNav" >Medication</Link>
                 <Link to="/doctors" className="loginNav">Doctors</Link>
+				<Link to="/bloodsugar" className="loginNav">Blood Sugar</Link>
                 <Link to="/appointment" className="loginNav">Appointments</Link>
 				<Link to="/weight" className="loginNav" >Weight</Link>
                 <Link to="/bloodpressure" className="loginNav">Blood Pressure</Link>
