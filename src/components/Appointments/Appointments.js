@@ -4,27 +4,33 @@ import axios from 'axios'
 import './Appointments.css'
 import { Link } from 'react-router-dom';
 import icon from '../../images/appointments.png'
+import Delete from '../Delete'
 
 class Appointment extends Component {
     constructor() {
         super()
         this.state = {
             selectOptions: [],
-            userID: "5ce2ef62116c10b9d385c064",
+            userID: this.props.userID,
             doctors: [],
-            allAppointments: []
+            allAppointments: [],
+            id: [],
+            schema: "AppointmentModel",
+            url: "/appointment/",
         }
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:3001/doctor/all/${this.state.userID}`, {
+        axios.get(`https://care-taker-app.herokuapp.com/doctor/all/${this.state.userID}`, {
             headers: {
                 "Content-Type": "application/json"
             }
         }).then(json => {
             let tempDoc = json.data.map(doctor => doctor.doctorName)
+            let idTemp = json.data.map(doctor => doctor._id)
             this.setState({
-                doctors: tempDoc
+                doctors: tempDoc,
+                id: idTemp
             })
             let selectOptions = tempDoc.map(doctorName => {
                 return <option value={doctorName}>{doctorName}</option>
@@ -34,16 +40,23 @@ class Appointment extends Component {
             })
         })
 
-        axios.get(`http://localhost:3001/appointment/${this.state.userID}`, {
+        axios.get(`https://care-taker-app.herokuapp.com/appointment/${this.state.userID}`, {
             headers: {
                 "Content-Type": "application/json"
             }
         }).then(appointments => {
+            console.log(this.state.id)
+            let schema = this.state.schema
+            let url = this.state.url
+            let id = this.state.id
+            console.log(id)
+            let getData = this.getData
             let temp = appointments.data.map(appointment => {
                 return (<tr>
                     <th>{appointment.date}</th>
                     <th>{appointment.date}</th>
                     <th>{appointment.doctorName}</th>
+                    <th><Delete id={appointment._id} schema={schema} url={url} getData={getData} /></th>
                 </tr>)
             })
             this.setState({
@@ -53,8 +66,9 @@ class Appointment extends Component {
 
 
     }
-    apointmentCreateButton = () => {
-        axios.put(`http://localhost:3001/appointment/new/${this.state.userID}`, {
+
+    getData = (e) => {
+        axios.put(`https://care-taker-app.herokuapp.com/new/${this.state.userID}`, {
             headers: {
                 "Content-Type": "application/json"
             },
@@ -68,6 +82,10 @@ class Appointment extends Component {
         })
 
     }
+    apointmentCreateButton = (e) => {
+        e.preventDefault()
+        this.getData()
+    }
 
     render() {
         return (<div>
@@ -80,12 +98,16 @@ class Appointment extends Component {
                     <select id="doctorName">
                         <option value="" >Choose a doctor</option>
                         {this.state.selectOptions}</select>
-                    <Link to='/doctors'> <input type="button" value="Add a Doctor" className="signInFirstNameField" /></Link>
-                    <input type="text" id="purpose" placeholder="purpose" className="signInFirstNameField" />
-                    <input type="date" id="appDate" placeholder="date" className="signUpDoBField" />
-                    <input type="text" id="appTime" placeholder="time" className="signInFirstNameField" />
+                    <form onSubmit={this.apointmentCreateButton}>
+                        <Link to='/doctors'>
+                            <input type="button" value="Add a Doctor" className="signInFirstNameField" />
+                        </Link>
+                        <input type="text" id="purpose" placeholder="purpose" className="signInFirstNameField" />
+                        <input type="date" id="appDate" placeholder="date" className="signUpDoBField" />
+                        <input type="text" id="appTime" placeholder="time" className="signInFirstNameField" />
 
-                    <input id="apointmentCreateButton" type="submit" value="Submit" onClick={this.apointmentCreateButton} />
+                        <input id="apointmentCreateButton" type="submit" value="Submit" />
+                    </form>
                 </div >
 
                 <div className="formAppointment">
