@@ -1,5 +1,5 @@
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
 import Home from './components/home/Home';
 import BloodPressure from './components/bloodPressure/BloodPressure';
@@ -17,20 +17,39 @@ import NavigationUser from './components/navigation/navigationUser';
 
 
 class App extends Component {
-	constructor(){
+	constructor() {
 		super()
 		this.state = {
+<<<<<<< HEAD
+			userID: "5ce7eb72607dd50017f52266"
+=======
 
 			userID: ""
+>>>>>>> e0bbfca0a5f42b4a33fa9320a3207ef556ea4869
 		}
 	}
 
 
 	render() {
+		console.log(this.state.userID)
 		return (
 			<div className="App">
 
 				<NavigationUser />
+<<<<<<< HEAD
+				<Switch>
+					<Route exact path="/dashboard" render={(routerProps) => <Dashboard {...routerProps} userID={this.state.userID} />} />
+					<Route exact path="/bloodpressure" render={(routerProps) => <BloodPressure {...routerProps} userID={this.state.userID} />} />
+					<Route exact path="/" render={(routerProps) => <Home {...routerProps} userID={this.state.userID} />} />
+					<Route exact path="/login" render={(routerProps) => <LogInForm {...routerProps} userID={this.state.userID} />} />
+					<Route exact path="/signup" render={(routerProps) => <SignUpForm {...routerProps} userID={this.state.userID} />} />
+					<Route exact path="/weight" render={(routerProps) => <Weight {...routerProps} userID={this.state.userID} />} />
+					<Route exact path="/appointment" render={(routerProps) => <Appointment {...routerProps} userID={this.state.userID} />} />
+					<Route exact path="/doctors" render={(routerProps) => <Doctor {...routerProps} userID={this.state.userID} />} />
+				</Switch>
+
+
+=======
 				<Route exact path="/dashboard" render={(routerProps) => <Dashboard {...routerProps} userID={this.state.userID}/>} />
 				<Route exact path="/bloodpressure" render={(routerProps) => <BloodPressure {...routerProps} userID={this.state.userID}/>} />
 				<Route exact path="/" render={(routerProps) => <Home {...routerProps} userID={this.state.userID}/>} />
@@ -57,6 +76,7 @@ class App extends Component {
 					render={(routerProps) => <DailyNote {...routerProps} />}
 					userID={this.state.userID}
 				/>
+>>>>>>> e0bbfca0a5f42b4a33fa9320a3207ef556ea4869
 
 			</div>
 		);

@@ -11,7 +11,7 @@ class Appointment extends Component {
         super()
         this.state = {
             selectOptions: [],
-            userID: this.props.userID,
+            // userID: this.props.userID,
             doctors: [],
             allAppointments: [],
             id: [],
@@ -21,7 +21,7 @@ class Appointment extends Component {
     }
 
     componentDidMount() {
-        axios.get(`https://care-taker-app.herokuapp.com/doctor/all/${this.state.userID}`, {
+        axios.get(`https://care-taker-app.herokuapp.com/doctor/all/${this.props.userID}`, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -40,7 +40,7 @@ class Appointment extends Component {
             })
         })
 
-        axios.get(`https://care-taker-app.herokuapp.com/appointment/${this.state.userID}`, {
+        axios.get(`https://care-taker-app.herokuapp.com/appointment/${this.props.userID}`, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -68,7 +68,7 @@ class Appointment extends Component {
     }
 
     getData = (e) => {
-        axios.put(`https://care-taker-app.herokuapp.com/new/${this.state.userID}`, {
+        axios.put(`https://care-taker-app.herokuapp.com/new/${this.props.userID}`, {
             headers: {
                 "Content-Type": "application/json"
             },
