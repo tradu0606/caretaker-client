@@ -16,7 +16,7 @@ class BloodPressure extends Component {
             ChartOrLogButton: "Show Blood Pressure Log",
             chartOrHistory: null,
             swichButton: "history",
-            userID: "5ce2ef62116c10b9d385c064",            
+            userID: this.props.userID,            
             id: [],
             schema: "BloodPressureModel",
             url: "/bloodpressure/",
@@ -101,7 +101,7 @@ class BloodPressure extends Component {
                 }
             })
         } else {
-            axios.put(`http://localhost:3001/bloodpressure/${this.state.userID}`,
+            axios.put(`https://care-taker-app.herokuapp.com/bloodpressure/${this.state.userID}`,
                 {
                     data: {
                         systolic: systolic,
@@ -120,7 +120,7 @@ class BloodPressure extends Component {
         }
     }
     getData=()=>{
-        axios.get(`http://localhost:3001/bloodpressure/${this.state.userID}`, {
+        axios.get(`https://care-taker-app.herokuapp.com/bloodpressure/${this.state.userID}`, {
             headers: {
                 "Content-Type": "application/json"
             }

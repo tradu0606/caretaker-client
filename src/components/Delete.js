@@ -5,7 +5,7 @@ import axios from 'axios';
 class Delete extends Component {
     deleteDocument = () => {
         
-        axios.delete(`http://localhost:3001${this.props.url}${this.props.id}`, {
+        axios.delete(`https://care-taker-app.herokuapp.com${this.props.url}${this.props.id}`, {
             headers: {
                 "Content-Type": "application/json"
             }
