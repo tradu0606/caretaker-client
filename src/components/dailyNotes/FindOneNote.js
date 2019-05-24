@@ -7,6 +7,7 @@ library.add(faChevronDown);
 class FindOneNote extends Component {
 	constructor() {
 		super();
+		console.log(this.props);
 		this.state = {
 			selectedNote: null
 		};

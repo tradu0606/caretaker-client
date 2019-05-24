@@ -8,6 +8,7 @@
 	background-color: #399d96c2;
 	box-shadow: 5px 5px 5px gray;
 	font-family: 'Quicksand', sans-serif;
+	padding-bottom: 2%;
 }
 h3 {
 	color: white;
@@ -25,10 +26,12 @@ input {
 	font-style: italic;
 }
 
-#signInSubmitButton {
-	padding-bottom: 5%;
-	margin-bottom: 10%;
-	margin-top: 2%;
-	width: 50%;
-	margin-left: 25%;
+.toggleButton {
+	background-color: #e5593a;
+	color: white;
+	font-weight: bolder;
+	box-shadow: 5px 5px 5px gray;
+}
+.toggleButton:hover {
+	background-color: #399d96c2;
 }

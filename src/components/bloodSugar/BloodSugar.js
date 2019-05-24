@@ -10,7 +10,7 @@ class BloodSugar extends Component {
 		this.state = {
 			sugarLevelBeforeMeal: '',
 			sugarLevelAfterMeal: '',
-			ChartOrLogButton: 'Show Blood Sugar Log'
+			ChartOrLogButton: 'Show Blood Sugar Log '
 		};
 		this.handleInput = this.handleInput.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -92,7 +92,7 @@ class BloodSugar extends Component {
 			this.setState({
 				chartOrHistory: <Bar data={this.state.data} />,
 				swichButton: 'history',
-				ChartOrLogButton: 'Show Blood Sugar Log'
+				ChartOrLogButton: 'Show Blood Sugar Log '
 			});
 		} else {
 			var templength = this.state.data.labels.length;
@@ -134,32 +134,34 @@ class BloodSugar extends Component {
 				<h1>
 					Blood Sugar <img className="bloodSugarIcon" src={bloodSugar} />
 				</h1>
-				<div className="addNewBPDiv form2">
-					<h3>Add New Blood Sugar</h3>
-					<form>
+				<div className="holder">
+					<div className="addNewBPDiv form2">
+						<h3>Add New Blood Sugar</h3>
+						<form>
+							<input
+								type="text"
+								name="sugarLevelBeforeMeal"
+								placeholder="sugar level before meal"
+								onChange={this.handleInput}
+							/>
+							<input
+								type="text"
+								placeholder="sugar level after meal"
+								name="sugarLevelAfterMeal"
+								onChange={this.handleInput}
+							/>
+							<input type="submit" value="submit" className="toggleButton" onClick={this.handleSubmit} />
+						</form>
+					</div>
+					<div className="chartContainer">
 						<input
-							type="text"
-							name="sugarLevelBeforeMeal"
-							placeholder="sugar level before meal"
-							onChange={this.handleInput}
+							className="toggleButton"
+							type="button"
+							value={this.state.ChartOrLogButton}
+							onClick={this.ChartOrLog}
 						/>
-						<input
-							type="text"
-							placeholder="sugar level after meal"
-							name="sugarLevelAfterMeal"
-							onChange={this.handleInput}
-						/>
-						<input type="submit" value="submit" className="toggleButton" onClick={this.handleSubmit} />
-					</form>
-				</div>
-				<div className="chartContainer">
-					<input
-						className="toggleButton"
-						type="button"
-						value={this.state.ChartOrLogButton}
-						onClick={this.ChartOrLog}
-					/>
-					<div>{this.state.chartOrHistory}</div>
+						<div>{this.state.chartOrHistory}</div>
+					</div>
 				</div>
 			</div>
 		);

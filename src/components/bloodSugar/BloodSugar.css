@@ -8,17 +8,34 @@
 	background-color: #399d96c2;
 	box-shadow: 5px 5px 5px gray;
 	font-family: 'Quicksand', sans-serif;
+	height: 100%;
+	padding-bottom: 3%;
+	margin-right: 5%;
 }
 .chartContainer {
 	background-color: #44b3ab3f;
 	box-shadow: 5px 5px 5px gray;
+	height: 50%;
+	width: 50%;
+	border-radius: 20px;
 }
 .toggleButton {
 	background-color: #e5593a;
 	color: white;
 	font-weight: bolder;
 	box-shadow: 5px 5px 5px gray;
+	margin-top: 2%;
+	font-family: 'Quicksand', sans-serif;
 }
 .toggleButton:hover {
 	background-color: #399d96c2;
+}
+.dataDiv {
+	height: 50%;
+	width: 50%;
+}
+.holder {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }

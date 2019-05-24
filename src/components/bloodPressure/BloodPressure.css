@@ -10,17 +10,20 @@
 	margin-top: 3%;
 }
 
-.formAppointment {
+.formAppointment2 {
 	/* display: flex;
 	justify-content: center; */
 	/* border: 7px solid rgb(57, 54, 54); */
 	border-radius: 8px;
 	margin: 0 auto;
-	background-color: #44b3ab3f;
+	background-color: #d4ecea;
 	box-shadow: 5px 5px 5px gray;
 	font-family: 'Quicksand', sans-serif;
 	overflow-y: auto;
 	padding: 1%;
+	width: 50%;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 h3 {
 	color: white;
@@ -85,4 +88,16 @@ table {
 }
 .dataHeader {
 	color: #bf6125;
+}
+.formAppointment1 {
+	/* display: flex;
+	justify-content: center; */
+	/* border: 7px solid rgb(57, 54, 54); */
+	border-radius: 8px;
+	background-color: #399d96c2;
+	box-shadow: 5px 5px 5px gray;
+	font-family: 'Quicksand', sans-serif;
+	overflow-y: auto;
+	padding: 1%;
+	margin-left: 5%;
 }

@@ -14,7 +14,7 @@ class LogInForm extends Component {
 						<h3>Log In</h3>
 						<input type="text" placeholder="user name" className="signInUserNameField" />
 						<input type="password" placeholder="password" className="signInPassWord" />
-						<input id="signInSubmitButton" type="submit" value="Submit" />
+						<input type="submit" className="toggleButton" value="Submit" />
 					</form>
 				</div>
 			</div>

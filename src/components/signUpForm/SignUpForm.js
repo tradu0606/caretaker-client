@@ -91,7 +91,7 @@ class SignUpForm extends Component {
 							name="password"
 							onChange={this.handleInput}
 						/>
-						<input id="signInSubmitButton" type="submit" value="Submit" onClick={this.handleSubmit} />
+						<input className="toggleButton" type="submit" value="Submit" onClick={this.handleSubmit} />
 					</form>
 				</div>
 			</div>

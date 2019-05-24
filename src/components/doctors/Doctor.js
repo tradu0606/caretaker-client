@@ -13,7 +13,7 @@ class Doctor extends Component {
 			street: '',
 			state: '',
 			zipcode: '',
-			doctorPhone: '',
+			doctorPhone: ''
 			// userID: this.props.userID
 		};
 		this.handleInput = this.handleInput.bind(this);
@@ -27,12 +27,7 @@ class Doctor extends Component {
 	}
 
 	handleSubmit() {
-<<<<<<< HEAD
 		const URL = 'https://care-taker-app.herokuapp.com/doctor/new/{this.props.userID}';
-=======
-		const URL = 'https://care-taker-app.herokuapp.com/doctor/new/{this.state.userID}';
-
->>>>>>> e0bbfca0a5f42b4a33fa9320a3207ef556ea4869
 		axios
 			.put(URL, {
 				doctorName: this.state.doctorName,
@@ -134,7 +129,7 @@ class Doctor extends Component {
 								type="text"
 								className="zipCodeField"
 								placeholder="zipcode"
-								pattern="[0-9]*"
+								// pattern="[0-9]*"
 								onChange={this.handleInput}
 							/>
 							<input

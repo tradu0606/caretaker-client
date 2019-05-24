@@ -3,14 +3,12 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import FindOneDoctor from './FindOneDoctor';
 
-
 class ViewAllDoctors extends Component {
 	constructor() {
 		super();
 		this.state = {
 			userDoctors: [],
-			selectDoctor: '',
-			// userID: this.props.userID
+			selectDoctor: ''
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -47,31 +45,6 @@ class ViewAllDoctors extends Component {
 		} else {
 			return <p>Pick a doctor</p>;
 		}
-		// console.log(this.state.selectDoctor);
-		// let selectDoctor;
-		// if (this.state.selectDoctor) {
-		// 	console.log('triggered');
-		// 	selectDoctor = (
-		// 		<FindOneDoctor selectDoctor={this.state.selectDoctor} userDoctors={this.state.userDoctors} />
-		// 	);
-		// } else {
-		// 	selectDoctor = null;
-		// }
-		// return (
-		// 	<div>
-		// 		<div className="doctorLinksContainer">
-		// 			<h3 className="doctorsListTitle">Your Doctors</h3>
-		// 			{this.state.userDoctors.map((doctor, i) => {
-		// 				return (
-		// 					<h2 onClick={this.handleClick} className="doctorLinks">
-		// 						{doctor.doctorName}
-		// 					</h2>
-		// 				);
-		// 			})}
-		// 		</div>
-		// 		{selectDoctor}
-		// 	</div>
-		// );
 	}
 }
 

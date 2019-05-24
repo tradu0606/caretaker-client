@@ -4,7 +4,7 @@
 }
 
 select {
-	display:inline-block;
+	display: inline-block;
 	height: 30px;
 	width: 80%;
 	font-size: 20px;
@@ -20,7 +20,6 @@ select {
 	margin-bottom: 5%;
 	margin-top: 3%;
 }
-
 
 .formAppointment {
 	/* display: flex;
@@ -59,17 +58,31 @@ input {
 	margin-left: 25%;
 }
 
-.holder{
+.holder {
 	display: flex;
 	justify-content: center;
 }
-table{
+table {
 	width: 100%;
 	color: white;
 	font-family: 'Quicksand', sans-serif;
 	text-align: left;
 }
 
-.tableHeader{
- color:#BF6125;
+.tableHeader {
+	color: #bf6125;
+}
+#toggleButton {
+	/* width: 300px;
+	height: 50px;
+	margin-top: 3%;
+	margin-bottom: 2%;
+	margin-left: 35%; */
+	background-color: #e5593a;
+	word-wrap: break-word;
+	color: white;
+	font-weight: bolder;
+	/* font-size: 80%; */
+	box-shadow: 5px 5px 5px gray;
+	font-family: 'Quicksand', sans-serif;
 }

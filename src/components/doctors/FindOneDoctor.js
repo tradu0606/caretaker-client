@@ -25,7 +25,6 @@ class FindOneDoctor extends Component {
 
 	render() {
 		console.log('FindOneDoctor: render');
-		// console.log(this.props.userDoctors);
 		console.log(this.props.name);
 		let doctorDetails;
 		if (this.state.selectedDoctor) {

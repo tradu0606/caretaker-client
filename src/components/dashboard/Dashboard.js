@@ -14,10 +14,10 @@ class Dashboard extends Component {
 	render() {
 		return (
 			<div>
-				<h1>Dasboard</h1>
+				<h1>Dashboard</h1>
 				<div className="rowOne">
 					<div className="dashboardComponent">
-						<Link to="/medication">
+						<Link to="/medications">
 							<div className="resizeImageDiv">
 								<img className="resizeImage" src={medication} />
 							</div>
