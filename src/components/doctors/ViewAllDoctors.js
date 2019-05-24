@@ -2,20 +2,21 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import FindOneDoctor from './FindOneDoctor';
-const URL = 'http://localhost:3001/doctor/all/5ce2d402236655a1648b00f5';
+
 
 class ViewAllDoctors extends Component {
 	constructor() {
 		super();
 		this.state = {
 			userDoctors: [],
-			selectDoctor: ''
+			selectDoctor: '',
+			userID: this.props.userID
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
 	componentDidMount() {
 		console.log('ViewAllDoctors: componentDidMount');
-		axios.get(URL).then((userDoctors) => {
+		axios.get(`https://care-taker-app.herokuapp.com/doctor/all/${this.state.userID}`).then((userDoctors) => {
 			console.log(userDoctors);
 			this.setState({ userDoctors: userDoctors.data });
 		});
