@@ -193,8 +193,8 @@ class BloodPressure extends Component {
 						<p id="errorMessage" style={this.state.errorStyle}>
 							Please enter a number
 						</p>
-						<input type="text" id="systolic" placeholder="systolic" />
-						<input type="text" id="diastolic" placeholder="diastolic" />
+						<input type="text" id="systolic" placeholder="systolic (mmHg)" />
+						<input type="text" id="diastolic" placeholder="diastolic (mmHg)" />
 						<input type="button" value="submit" className="toggleButton" onClick={this.AddBloodPressure} />
 					</div>
 					<div className="formAppointment2">
