@@ -76,7 +76,7 @@ class App extends Component {
 					/>
 					<Route
 						exact
-						path="/appointment"
+						path="/appointments"
 						render={(routerProps) => <Appointment {...routerProps} userID={this.state.userID} />}
 					/>
 					<Route
