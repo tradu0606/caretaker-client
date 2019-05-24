@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import medication from '../../images/medications.png';
-import '../doctors/Doctor.css';
+import '../medications/Medications.css';
 import ViewAllMedications from './ViewAllMedications';
 import axios from 'axios';
 
@@ -42,14 +42,14 @@ class Medications extends Component {
 			});
 	}
 	render() {
-		console.log('Doctor: render');
+		console.log('Medication: render');
 		return (
-			<div className="formatDoctorsPage">
+			<div className="formatMedicationsPage">
 				<h1>
-					Medications <img className="doctorsIcon" src={medication} />
+					Medications <img className="medicationsIcon" src={medication} />
 				</h1>
-				<div>
-					<div className="form" id="newDoctorForm">
+				<div id="containerForBothDivs">
+					<div className="medicationFormDiv">
 						<form id="medicationForm">
 							<h3>Add a New Medication</h3>
 							<input
@@ -70,15 +70,16 @@ class Medications extends Component {
 
 							<input
 								type="submit"
-								className="doctorSubmitButton"
+								className="medicationSubmitButton"
 								value="submit"
 								onClick={this.handleSubmit}
 							/>
 						</form>
 					</div>
-				</div>
-				<div className="viewAllDoctors">
-					<ViewAllMedications />
+
+					<div className="viewAllMedications">
+						<ViewAllMedications />
+					</div>
 				</div>
 			</div>
 		);

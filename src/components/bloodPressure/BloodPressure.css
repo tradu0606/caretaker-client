@@ -10,14 +10,13 @@
 	margin-top: 3%;
 }
 
-
 .formAppointment {
 	/* display: flex;
 	justify-content: center; */
 	/* border: 7px solid rgb(57, 54, 54); */
 	border-radius: 8px;
 	margin: 0 auto;
-	background-color: #399d96c2;
+	background-color: #44b3ab3f;
 	box-shadow: 5px 5px 5px gray;
 	font-family: 'Quicksand', sans-serif;
 	overflow-y: auto;
@@ -47,30 +46,43 @@ input {
 	margin-left: 25%;
 }
 
-.holder{
-    width: 100%;
+.holder {
+	width: 100%;
 	display: flex;
 	justify-content: center;
 }
-table{
+table {
 	width: 100%;
 	color: white;
 	font-family: 'Quicksand', sans-serif;
 	text-align: left;
 }
+.toggleButton {
+	/* width: 300px;
+	height: 50px;
+	margin-top: 3%;
+	margin-bottom: 2%;
+	margin-left: 35%; */
+	background-color: #e5593a;
+	word-wrap: break-word;
+	color: white;
+	font-weight: bolder;
+	/* font-size: 80%; */
+	box-shadow: 5px 5px 5px gray;
+}
 
 .dataHolder {
-    padding: 20px;
+	padding: 20px;
 }
-.dataDiv{
-display: flex;
-align-items: center;
+.dataDiv {
+	display: flex;
+	align-items: center;
 }
-.dataHolder{
-    width: 50%;
-    padding: 0;
-    margin:0;
+.dataHolder {
+	width: 50%;
+	padding: 0;
+	margin: 0;
 }
-.dataHeader{
-    color:#BF6125;
+.dataHeader {
+	color: #bf6125;
 }

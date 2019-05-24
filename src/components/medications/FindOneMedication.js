@@ -43,8 +43,8 @@ class FindOneMedication extends Component {
 		}
 
 		return (
-			<div className="doctorRecord">
-				<h3 onClick={this.selectMedication} id={this.props.name} className="doctorNameOnRecord">
+			<div className="medicationRecord">
+				<h3 onClick={this.selectMedication} id={this.props.name} className="medicationNameOnRecord">
 					{this.props.name}
 					<FontAwesomeIcon className="chevronIcon" icon="chevron-down" />
 				</h3>

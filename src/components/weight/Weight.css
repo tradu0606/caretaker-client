@@ -9,8 +9,17 @@
 	margin-bottom: 5%;
 	margin-top: 3%;
 }
+#toggleButton {
+	background-color: #e5593a;
+	word-wrap: break-word;
+	color: white;
+	font-weight: bolder;
 
-
+	box-shadow: 5px 5px 5px gray;
+}
+#toggleButton:hover {
+	background-color: #399d96c2;
+}
 .formAppointment {
 	/* display: flex;
 	justify-content: center; */
@@ -47,30 +56,30 @@ input {
 	margin-left: 25%;
 }
 
-.holder{
-    width: 100%;
+.holder {
+	width: 100%;
 	display: flex;
 	justify-content: center;
 }
-table{
+table {
 	width: 100%;
 	color: white;
 	font-family: 'Quicksand', sans-serif;
 	text-align: left;
 }
 
-.dataHeader{
- color:#BF6125;
+.dataHeader {
+	color: #bf6125;
 }
 .dataHolder {
-    padding: 20px;
+	padding: 20px;
 }
-.dataDiv{
-display: flex;
-align-items: center;
+.dataDiv {
+	display: flex;
+	align-items: center;
 }
-.dataHolder{
-    width: 50%;
-    padding: 0;
-    margin:0;
+.dataHolder {
+	width: 50%;
+	padding: 0;
+	margin: 0;
 }
