@@ -67,7 +67,7 @@ class Appointment extends Component {
 		})
 	}
 	getData = (e) => {
-		axios.put(`https://care-taker-app.herokuapp.com/new/${this.props.userID}`, {
+		axios.put(`https://care-taker-app.herokuapp.com/appointment/new/${this.props.userID}`, {
 			headers: {
 				'Content-Type': 'application/json'
 			},
