@@ -22,8 +22,9 @@ class BloodSugar extends Component {
 		this.setState({ [name]: value });
 	}
 
-	handleSubmit() {
-		const URL = 'http://localhost:3001/sugarlevel/5ce2d402236655a1648b00f5';
+	handleSubmit(e) {
+		e.preventDefault()
+		const URL = `https://care-taker-app.herokuapp.com/sugarlevel/${this.props.userID}`;
 		axios
 			.put(URL, {
 				sugarLevelBeforeMeal: this.state.sugarLevelBeforeMeal,
@@ -38,7 +39,7 @@ class BloodSugar extends Component {
 			});
 	}
 	componentDidMount() {
-		const URL = 'http://localhost:3001/sugarlevel/5ce2d402236655a1648b00f5';
+		const URL = `https://care-taker-app.herokuapp.com/sugarlevel/${this.props.userID}`;
 
 		axios.get(URL).then((userSugarLevels) => {
 			console.log(userSugarLevels);

@@ -42,37 +42,30 @@ class Appointment extends Component {
 				});
 			});
 
-		axios
-			.get(`https://care-taker-app.herokuapp.com/appointment/${this.props.userID}`, {
-				headers: {
-					'Content-Type': 'application/json'
-				}
+		axios.get(`https://care-taker-app.herokuapp.com/appointment/${this.props.userID}`, {
+			headers: {
+				"Content-Type": "application/json"
+			}
+		}).then(appointments => {
+			console.log(this.state.id)
+			let schema = this.state.schema
+			let url = this.state.url
+			let id = this.state.id
+			console.log(id)
+			let getData = this.getData
+			let temp = appointments.data.map(appointment => {
+				return (<tr>
+					<th>{appointment.date}</th>
+					<th>{appointment.time}</th>
+					<th>{appointment.doctorName}</th>
+					<th><Delete id={appointment._id} schema={schema} url={url} getData={getData} /></th>
+				</tr>)
 			})
-			.then((appointments) => {
-				console.log(this.state.id);
-				let schema = this.state.schema;
-				let url = this.state.url;
-				let id = this.state.id;
-				console.log(id);
-				let getData = this.getData;
-				let temp = appointments.data.map((appointment) => {
-					return (
-						<tr>
-							<th>{appointment.date}</th>
-							<th>{appointment.date}</th>
-							<th>{appointment.doctorName}</th>
-							<th>
-								<Delete id={appointment._id} schema={schema} url={url} getData={getData} />
-							</th>
-						</tr>
-					);
-				});
-				this.setState({
-					allAppointments: temp
-				});
-			});
+			this.setState({
+				allAppointments: temp
+			})
+		})
 	}
-
 	getData = (e) => {
 		axios.put(`https://care-taker-app.herokuapp.com/new/${this.props.userID}`, {
 			headers: {
@@ -128,8 +121,9 @@ class Appointment extends Component {
 					</div>
 				</div>
 			</div>
-		);
+		)
 	}
 }
+
 
 export default Appointment;

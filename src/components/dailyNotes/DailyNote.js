@@ -20,8 +20,9 @@ class DailyNote extends Component {
 		this.setState({ [name]: value });
 	}
 
-	handleSubmit() {
-		const URL = `http://localhost:3001/note/new/5ce2d402236655a1648b00f5`;
+	handleSubmit(e) {
+		e.preventDefault()
+		const URL = `https://care-taker-app.herokuapp.com/note/new/${this.props.userID}`;
 		axios
 			.put(URL, {
 				date: this.state.date,
@@ -61,7 +62,7 @@ class DailyNote extends Component {
 						</form>
 					</div>
 					<div className="viewAllNotes">
-						<ViewAllNotes />
+						<ViewAllNotes userID={this.props.userID}/>
 					</div>
 				</div>
 			</div>

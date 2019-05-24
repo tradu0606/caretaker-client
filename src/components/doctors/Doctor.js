@@ -149,7 +149,7 @@ class Doctor extends Component {
 						</form>
 					</div>
 					<div className="viewAllDoctors">
-						<ViewAllDoctors />
+						<ViewAllDoctors userID={this.props.userID}/>
 					</div>
 				</div>
 			</div>

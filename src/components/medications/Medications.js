@@ -24,8 +24,9 @@ class Medications extends Component {
 		this.setState({ [name]: value });
 	}
 
-	handleSubmit() {
-		const URL = 'http://localhost:3001/medication/new/5ce2d402236655a1648b00f5';
+	handleSubmit(e) {
+		e.preventDefault()
+		const URL = `https://care-taker-app.herokuapp.com/medication/new/${this.props.userID}`;
 		axios
 			.put(URL, {
 				medicationName: this.state.medicationName,
@@ -78,7 +79,7 @@ class Medications extends Component {
 					</div>
 
 					<div className="viewAllMedications">
-						<ViewAllMedications />
+						<ViewAllMedications medicationName={this.state.medicationName} userID={this.props.userID}/>
 					</div>
 				</div>
 			</div>

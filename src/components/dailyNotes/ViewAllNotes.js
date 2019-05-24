@@ -14,7 +14,7 @@ class ViewAllNotes extends Component {
 	}
 	componentDidMount() {
 		console.log('ViewAllNotes: componentDidMount');
-		axios.get(URL).then((userNotes) => {
+		axios.get(`https://care-taker-app.herokuapp.com/note/${this.props.userID}`).then((userNotes) => {
 			console.log(userNotes);
 			this.setState({ userNotes: userNotes.data });
 		});
@@ -37,7 +37,7 @@ class ViewAllNotes extends Component {
 				<div className="doctorLinksContainer">
 					<h3 className="doctorsListTitle">Your Notes</h3>
 					{this.state.userNotes.map((note, i) => {
-						return <FindOneNote notes={this.state.userNotes} key={i} name={note.date} />;
+						return <FindOneNote userID={this.props.userID} notes={this.state.userNotes} key={i} symptoms={note.symptoms} name={note.date} />;
 					})}
 				</div>
 			);
