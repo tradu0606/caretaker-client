@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import FindOneMedication from './FindOneMedication';
 
-
 class ViewAllMedications extends Component {
 	constructor() {
 		super();
@@ -10,20 +9,15 @@ class ViewAllMedications extends Component {
 			userMedications: [],
 			selectMedication: ''
 		};
-		this.handleClick = this.handleClick.bind(this);
 	}
 	componentDidMount() {
 		console.log('ViewAllMedications: componentDidMount');
-		axios.get(`https://care-taker-app.herokuapp.com/medication/all/${this.props.userID}`).then((userMedications) => {
-			console.log(userMedications);
-			this.setState({ userMedications: userMedications.data });
-		});
-	}
-	handleClick(event) {
-		event.preventDefault()
-		console.log('ViewAllMedications: handleClick');
-		console.log(event.target.name);
-		this.setState({ selectMedication: event.target.name });
+		axios
+			.get(`https://care-taker-app.herokuapp.com/medication/all/${this.props.userID}`)
+			.then((userMedications) => {
+				console.log(userMedications);
+				this.setState({ userMedications: userMedications.data });
+			});
 	}
 
 	render() {
