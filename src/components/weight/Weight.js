@@ -13,7 +13,7 @@ class Weight extends Component {
 			errorStyle: {
 				visibility: 'hidden'
 			},
-			// userID: this.props.userID,
+
 			weightData: [],
 			ChartOrLogButton: 'Show Weight Log',
 			id: [],

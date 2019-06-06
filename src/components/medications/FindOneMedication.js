@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import Delete from '../Delete';
 library.add(faChevronDown);
 
 class FindOneMedication extends Component {
@@ -15,10 +16,12 @@ class FindOneMedication extends Component {
 	}
 
 	selectMedication(evt) {
+		evt.preventDefault();
 		console.log('FindOneMedication: selectMedication');
 		console.log(this.props.medications);
+		console.log(this.props.name)
 		let selectedMedication = this.props.medications.filter((medication) => {
-			return medication.medicationName === evt.target.id;
+			return medication.medicationName === this.props.name;
 		});
 		this.setState({ selectedMedication: selectedMedication });
 	}
@@ -36,6 +39,7 @@ class FindOneMedication extends Component {
 					<h4 className="leftMargin street"> Dosage:{this.state.selectedMedication[0].dosage}</h4>
 					<h4 className="leftMargin"> Start Date:{this.state.selectedMedication[0].startDate}</h4>
 					<h4 className="leftMargin"> End Date:{this.state.selectedMedication[0].endDate}</h4>
+					<Delete id={this.props.id}  url='/medication/' />
 				</div>
 			);
 		} else {

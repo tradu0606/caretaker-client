@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import bloodSugar from '../../images/bloodSugar.png';
 import './BloodSugar.css';
 import axios from 'axios';
+import Delete from '../Delete';
 import { Bar, Line } from 'react-chartjs-2';
 
 class BloodSugar extends Component {
@@ -52,9 +53,13 @@ class BloodSugar extends Component {
 			let sugarLevelAfterMeal = userSugarLevels.data.map(
 				(userSugarLevels) => userSugarLevels.sugarLevelAfterMeal
 			);
+			let id = userSugarLevels.data.map(
+				(userSugarLevels) => userSugarLevels._id
+			);
 			console.log();
 			this.setState({
 				data: {
+					id: id,
 					labels: labels,
 					datasets: [
 						{
@@ -97,12 +102,14 @@ class BloodSugar extends Component {
 			});
 		} else {
 			var templength = this.state.data.labels.length;
-			function buidHistory(date, sugarLevelBeforeMeal, sugarLevelAfterMeal) {
+			function buidHistory(date, sugarLevelBeforeMeal, sugarLevelAfterMeal, _id) {
 				return (
 					<div className="dataDiv">
 						<p className="dataHolder">{date}</p>
 						<p className="dataHolder">{sugarLevelBeforeMeal}</p>
 						<p className="dataHolder">{sugarLevelAfterMeal}</p>
+						<Delete id={_id}  url='/sugarlevel/' />
+						
 					</div>
 				);
 			}
@@ -111,7 +118,8 @@ class BloodSugar extends Component {
 					buidHistory(
 						this.state.data.labels[i],
 						this.state.data.datasets[0].data[i],
-						this.state.data.datasets[1].data[i]
+						this.state.data.datasets[1].data[i], 
+						this.state.data.id[i]
 					)
 				);
 			}

@@ -42,6 +42,7 @@ class ViewAllMedications extends Component {
 						return (
 							<FindOneMedication
 								medications={this.state.userMedications}
+								id={medication._id}
 								key={i}
 								name={medication.medicationName}
 							/>
