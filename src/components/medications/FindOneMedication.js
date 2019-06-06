@@ -5,18 +5,18 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 library.add(faChevronDown);
 
 class FindOneMedication extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		console.log(this.props);
 		this.state = {
 			selectedMedication: null
 		};
 		this.selectMedication = this.selectMedication.bind(this);
 	}
-
 	selectMedication(evt) {
 		console.log('FindOneMedication: selectMedication');
 		console.log(this.props.medications);
+		console.log(evt.target);
 		let selectedMedication = this.props.medications.filter((medication) => {
 			return medication.medicationName === evt.target.id;
 		});
@@ -25,7 +25,6 @@ class FindOneMedication extends Component {
 
 	render() {
 		console.log('FindOneMedication: render');
-		// console.log(this.props.userMedications);
 		console.log(this.props.name);
 		let medicationDetails;
 		if (this.state.selectedMedication) {
@@ -44,7 +43,7 @@ class FindOneMedication extends Component {
 
 		return (
 			<div className="medicationRecord">
-				<h3 onClick={this.selectMedication} id={this.props.name} className="medicationNameOnRecord">
+				<h3 onClick={this.selectMedication} id={this.props.name} className="doctorNameOnRecord">
 					{this.props.name}
 					<FontAwesomeIcon className="chevronIcon" icon="chevron-down" />
 				</h3>
