@@ -23,7 +23,9 @@
 	width: 90%;
 	padding-bottom: 2%;
 	box-shadow: 5px 5px 5px gray;
-	margin: 0 auto;
+	/* margin: 0 auto; */
+	margin-left: 5%;
+	margin-bottom: 3%;
 }
 .dailyNoteNameOnRecord {
 	text-align: center;

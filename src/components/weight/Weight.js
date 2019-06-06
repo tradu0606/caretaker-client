@@ -152,16 +152,12 @@ class Weight extends Component {
 				</h1>
 				<div className="holder">
 					<div className="formAppointment1">
+						<h3>Add a New Weight Measure</h3>
 						<p id="errorMessage" style={this.state.errorStyle}>
 							{this.state.errorMessage}
 						</p>
 						<input type="text" id="weight" placeholder="weight" onChange={this.hideMessage} />
-						<input
-							type="button"
-							className="toggleButton"
-							value="Add New Weight Data"
-							onClick={this.AddWeight}
-						/>
+						<input type="button" className="toggleButton" value="Add New Weight" onClick={this.AddWeight} />
 					</div>
 					<div className="formAppointment2">
 						<input
