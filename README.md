@@ -1,8 +1,8 @@
 # caretaker-server
 
-The objective of this project was to build an Javascript MERN app. This repository contains the back end, and the link to the front end is below:
+The objective of this project was to build an Javascript MERN app. This repository contains the front end, and the link to the back end is below:
 
-https://github.com/tradu0606/caretaker-client
+https://github.com/rashabaig/caretaker-server
 
 This project was a collaboration between Rasha Baig and Tanya Radu, where each of us took responsibility over certain components on the back end and certain components on the front end. 
 
@@ -15,14 +15,16 @@ See Planning Folder
 
 Technologies used in this project include React, Node.js, MongoDB, Mongoose, and Express. Adobe XD was also used to develop wireframes.
 
-
 ## Approach Taken
 
-1. Creating a database called caretaker_db
-2. Designing models and developing CRUD functionality for each model
-3. Designing Wireframes to set structure and theme across front end
-4. Setting up routes, creating react components, and retrieving data from the back end
+1. Setting up the back-end
+2. Developing wireframes to establish structure and styling 
+3. Developing components for each model
+4. Retrieving data from the back end through axios 
+5. Enabling Put and Post request functionality with axios
+6. Deployment
+
 
 ## Deployment
 
-This project's back end was deployed by heroku and the front end was deployed with Surge, and can be accessed at caretaker.surge.sh.
+This project's back end was deployed by heroku and the front end was deployed with Surge. The front-end and can be accessed at caretaker.surge.sh.
