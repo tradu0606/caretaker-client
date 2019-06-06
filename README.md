@@ -1,4 +1,4 @@
-# caretaker-server
+# caretaker-client
 
 The objective of this project was to build an Javascript MERN app. This repository contains the front end, and the link to the back end is below:
 
