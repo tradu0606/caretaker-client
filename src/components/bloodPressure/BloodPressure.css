@@ -74,17 +74,43 @@ table {
 	box-shadow: 5px 5px 5px gray;
 }
 
-.dataHolder {
-	padding: 20px;
-}
 .dataDiv {
 	display: flex;
 	align-items: center;
+	margin-left: 3%;
+	padding-left: 5%;
 }
-.dataHolder {
+.dataDiv2 {
+	display: flex;
+	align-items: center;
+	margin-left: 0;
+	padding-left: 1%;
+}
+.dataHolderBP {
 	width: 50%;
 	padding: 0;
 	margin: 0;
+	/* padding: 20px; */
+}
+.dataHolder2 {
+	width: auto;
+	padding-left: 5%;
+	margin-left: 0;
+	/* padding: 20px; */
+}
+.dataHolder3 {
+	width: auto;
+	padding-left: 15%;
+	margin-left: 0;
+	margin-right: 0;
+	/* padding: 20px; */
+}
+.dataHolder4 {
+	width: auto;
+	padding-left: 10%;
+	margin-left: 0;
+	margin-right: 0;
+	/* padding: 20px; */
 }
 .dataHeader {
 	color: #bf6125;

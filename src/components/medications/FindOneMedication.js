@@ -6,20 +6,20 @@ import Delete from '../Delete';
 library.add(faChevronDown);
 
 class FindOneMedication extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		console.log(this.props);
 		this.state = {
 			selectedMedication: null
 		};
 		this.selectMedication = this.selectMedication.bind(this);
 	}
-
 	selectMedication(evt) {
 		evt.preventDefault();
 		console.log('FindOneMedication: selectMedication');
 		console.log(this.props.medications);
-		console.log(this.props.name)
+		console.log(evt.target);
+		console.log(this.props.name);
 		let selectedMedication = this.props.medications.filter((medication) => {
 			return medication.medicationName === this.props.name;
 		});
@@ -28,7 +28,6 @@ class FindOneMedication extends Component {
 
 	render() {
 		console.log('FindOneMedication: render');
-		// console.log(this.props.userMedications);
 		console.log(this.props.name);
 		let medicationDetails;
 		if (this.state.selectedMedication) {
@@ -39,7 +38,9 @@ class FindOneMedication extends Component {
 					<h4 className="leftMargin street"> Dosage:{this.state.selectedMedication[0].dosage}</h4>
 					<h4 className="leftMargin"> Start Date:{this.state.selectedMedication[0].startDate}</h4>
 					<h4 className="leftMargin"> End Date:{this.state.selectedMedication[0].endDate}</h4>
-					<Delete id={this.props.id}  url='/medication/' />
+					<div className="center">
+						<Delete id={this.props.id} url="/medication/" />
+					</div>
 				</div>
 			);
 		} else {
@@ -48,7 +49,7 @@ class FindOneMedication extends Component {
 
 		return (
 			<div className="medicationRecord">
-				<h3 onClick={this.selectMedication} id={this.props.name} className="medicationNameOnRecord">
+				<h3 onClick={this.selectMedication} id={this.props.name} className="doctorNameOnRecord">
 					{this.props.name}
 					<FontAwesomeIcon className="chevronIcon" icon="chevron-down" />
 				</h3>

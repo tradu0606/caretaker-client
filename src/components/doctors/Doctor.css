@@ -45,15 +45,12 @@ label {
 }
 .doctorRecord {
 	background-color: #399d96c2;
-	/* background-color: radial-gradient(rgb(118, 188, 196), rgb(82, 157, 171)); */
 	border-radius: 20px;
 	width: 90%;
 	padding-bottom: 2%;
-	/* padding-right: 1%; */
-	/* margin-left: 2%;
-	margin-right: 12%; */
+	margin-left: 4%;
 	box-shadow: 5px 5px 5px gray;
-	margin: 0 auto;
+	margin-bottom: 3%;
 }
 .doctorNameOnRecord {
 	text-align: center;
@@ -119,9 +116,10 @@ label {
 	height: 20%;
 	display: block;
 	margin-top: 0;
+	margin-right: 0;
 }
 .doctorsListTitle {
-	color: rgb(201, 92, 34);
+	color: white;
 	background-color: rgba(91, 171, 172, 0.571);
 	margin-top: 0;
 	padding-top: 1%;

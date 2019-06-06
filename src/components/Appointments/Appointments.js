@@ -42,29 +42,35 @@ class Appointment extends Component {
 				});
 			});
 
-		axios.get(`https://care-taker-app.herokuapp.com/appointment/${this.props.userID}`, {
-			headers: {
-				"Content-Type": "application/json"
-			}
-		}).then(appointments => {
-			console.log(this.state.id)
-			let schema = this.state.schema
-			let url = this.state.url
-			let id = this.state.id
-			console.log(id)
-			let getData = this.getData
-			let temp = appointments.data.map(appointment => {
-				return (<tr>
-					<th>{appointment.date}</th>
-					<th>{appointment.time}</th>
-					<th>{appointment.doctorName}</th>
-					<th><Delete id={appointment._id} schema={schema} url={url} getData={getData} /></th>
-				</tr>)
+		axios
+			.get(`https://care-taker-app.herokuapp.com/appointment/${this.props.userID}`, {
+				headers: {
+					'Content-Type': 'application/json'
+				}
 			})
-			this.setState({
-				allAppointments: temp
-			})
-		})
+			.then((appointments) => {
+				console.log(this.state.id);
+				let schema = this.state.schema;
+				let url = this.state.url;
+				let id = this.state.id;
+				console.log(id);
+				let getData = this.getData;
+				let temp = appointments.data.map((appointment) => {
+					return (
+						<tr>
+							<th>{appointment.date}</th>
+							<th>{appointment.time}</th>
+							<th>{appointment.doctorName}</th>
+							<th>
+								<Delete id={appointment._id} schema={schema} url={url} getData={getData} />
+							</th>
+						</tr>
+					);
+				});
+				this.setState({
+					allAppointments: temp
+				});
+			});
 	}
 	getData = (e) => {
 		axios.put(`https://care-taker-app.herokuapp.com/appointment/new/${this.props.userID}`, {
@@ -97,6 +103,7 @@ class Appointment extends Component {
 							<option value="">Choose a doctor</option>
 							{this.state.selectOptions}
 						</select>
+						<h3 class="or">or</h3>
 						<form onSubmit={this.apointmentCreateButton}>
 							<Link to="/doctors">
 								<input type="button" value="Add a Doctor" className="toggleButton" />
@@ -108,8 +115,8 @@ class Appointment extends Component {
 						</form>
 					</div>
 
-					<div className="formAppointment">
-						<h3>My Appointments</h3>
+					<div className="chartContainer">
+						<h3 className="orange">My Appointments</h3>
 						<table>
 							<tr className="tableHeader">
 								<th>Date</th>
@@ -121,9 +128,8 @@ class Appointment extends Component {
 					</div>
 				</div>
 			</div>
-		)
+		);
 	}
 }
-
 
 export default Appointment;
