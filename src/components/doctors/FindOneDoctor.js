@@ -43,11 +43,6 @@ class FindOneDoctor extends Component {
 			doctorDetails = <p> </p>;
 		}
 
-		// let singleDoctor = this.props.userDoctors.filter((doctor) => doctor.doctorName === this.props.selectDoctor);
-		// console.log(singleDoctor);
-		// console.log(singleDoctor[0]);
-		// console.log(singleDoctor[0].doctorName);
-
 		return (
 			<div className="doctorRecord">
 				<h3 onClick={this.selectDoctor} id={this.props.name} className="doctorNameOnRecord">
@@ -55,12 +50,6 @@ class FindOneDoctor extends Component {
 					<FontAwesomeIcon className="chevronIcon" icon="chevron-down" />
 				</h3>
 				{doctorDetails}
-				{/* <h4 className="leftMargin"> Specialization: {singleDoctor.doctorSpecialty}</h4>
-				<h4 className="addressLabel">Address:</h4>
-				<h4 className="leftMargin street"> Street:{singleDoctor.street}</h4>
-				<h4 className="leftMargin"> State:{singleDoctor.state}</h4>
-				<h4 className="leftMargin"> Zip Code:{singleDoctor.zipcode}</h4>
-				<h4 className="leftMargin paddingBottom"> Phone:{singleDoctor.doctorPhone}</h4> */}
 			</div>
 		);
 	}

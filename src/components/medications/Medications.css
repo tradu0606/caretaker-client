@@ -24,7 +24,10 @@
 	width: 90%;
 	padding-bottom: 2%;
 	box-shadow: 5px 5px 5px gray;
-	margin: 0 auto;
+	/* margin: 0 auto; */
+	margin-left: 5%;
+	margin-bottom: 2%;
+	margin-right: 2%;
 }
 .medicationNameOnRecord {
 	text-align: center;
@@ -68,13 +71,15 @@
 	height: 20%;
 	display: block;
 	margin-top: 0;
+	margin-right: 0;
 }
 .medicationsListTitle {
-	color: rgb(201, 92, 34);
+	color: white;
 	background-color: rgba(91, 171, 172, 0.571);
 	margin-top: 0;
 	padding-top: 1%;
 	padding-bottom: 1%;
+	margin-right: 0;
 }
 .chevronIcon {
 	color: rgb(201, 92, 34);
@@ -99,4 +104,7 @@
 .viewAllMedications {
 	width: 50%;
 	border: 5px solid #399d96c2;
+}
+.center {
+	margin-left: 28%;
 }

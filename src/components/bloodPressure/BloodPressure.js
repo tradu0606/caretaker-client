@@ -66,9 +66,9 @@ class BloodPressure extends Component {
 			function buidHistory(date, systolic, diastolic, id) {
 				return (
 					<div className="dataDiv">
-						<p className="dataHolder">{date}</p>
-						<p className="dataHolder">{systolic}</p>
-						<p className="dataHolder">{diastolic}</p>
+						<p className="dataHolderBP">{date}</p>
+						<p className="dataHolderBP">{systolic}</p>
+						<p className="dataHolderBP">{diastolic}</p>
 						<Delete id={id} schema={schema} url={url} getData={getData} />
 					</div>
 				);
@@ -84,11 +84,11 @@ class BloodPressure extends Component {
 				);
 			}
 			tempReturn.unshift(
-				<div className="dataDiv dataHeader">
-					<p className="dataHolder">Date</p>
-					<p className="dataHolder">Systolic</p>
-					<p className="dataHolder">Diastolic</p>
-					<p className="dataHolder" />
+				<div className="dataDiv2 dataHeader">
+					<p className="dataHolder2">Date</p>
+					<p className="dataHolder3">Systolic</p>
+					<p className="dataHolder4">Diastolic</p>
+					<p className="dataHolder2" />
 				</div>
 			);
 			this.setState({

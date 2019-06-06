@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import FindOneNote from './FindOneNote';
-const URL = 'http://localhost:3001/note/5ce2d402236655a1648b00f5';
 
 class ViewAllNotes extends Component {
 	constructor() {
@@ -35,6 +34,16 @@ class ViewAllNotes extends Component {
 							<FindOneNote
 								userID={this.props.userID}
 								notes={this.state.userNotes}
+								key={i}
+								symptoms={note.symptoms}
+								name={note.date}
+							/>
+						);
+						return (
+							<FindOneNote
+								userID={this.props.userID}
+								notes={this.state.userNotes}
+								id={note._id}
 								key={i}
 								symptoms={note.symptoms}
 								name={note.date}
