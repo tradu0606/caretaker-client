@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import Delete from '../Delete';
 library.add(faChevronDown);
 
 class FindOneDoctor extends Component {
@@ -37,16 +38,12 @@ class FindOneDoctor extends Component {
 					<h4 className="leftMargin"> State:{this.state.selectedDoctor[0].state}</h4>
 					<h4 className="leftMargin"> Zip Code:{this.state.selectedDoctor[0].zipcode}</h4>
 					<h4 className="leftMargin paddingBottom"> Phone:{this.state.selectedDoctor[0].doctorPhone}</h4>
+					<Delete id={this.state.selectedDoctor[0]._id}  url='/doctor/' />
 				</div>
 			);
 		} else {
 			doctorDetails = <p> </p>;
 		}
-
-		// let singleDoctor = this.props.userDoctors.filter((doctor) => doctor.doctorName === this.props.selectDoctor);
-		// console.log(singleDoctor);
-		// console.log(singleDoctor[0]);
-		// console.log(singleDoctor[0].doctorName);
 
 		return (
 			<div className="doctorRecord">
@@ -55,12 +52,6 @@ class FindOneDoctor extends Component {
 					<FontAwesomeIcon className="chevronIcon" icon="chevron-down" />
 				</h3>
 				{doctorDetails}
-				{/* <h4 className="leftMargin"> Specialization: {singleDoctor.doctorSpecialty}</h4>
-				<h4 className="addressLabel">Address:</h4>
-				<h4 className="leftMargin street"> Street:{singleDoctor.street}</h4>
-				<h4 className="leftMargin"> State:{singleDoctor.state}</h4>
-				<h4 className="leftMargin"> Zip Code:{singleDoctor.zipcode}</h4>
-				<h4 className="leftMargin paddingBottom"> Phone:{singleDoctor.doctorPhone}</h4> */}
 			</div>
 		);
 	}
