@@ -27,4 +27,4 @@ Technologies used in this project include React, Node.js, MongoDB, Mongoose, and
 
 ## Deployment
 
-This project's back end was deployed by heroku and the front end was deployed with Surge. The front-end and can be accessed at caretaker.surge.sh.
+This project's back end was deployed by heroku and the front end was deployed with Surge. The front-end and can be accessed at caretaker.surge.sh. The back-end is deployed at https://care-taker-app.herokuapp.com/.

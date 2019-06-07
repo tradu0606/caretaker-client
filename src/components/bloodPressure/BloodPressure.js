@@ -69,7 +69,7 @@ class BloodPressure extends Component {
 						<p className="dataHolderBP">{date}</p>
 						<p className="dataHolderBP">{systolic}</p>
 						<p className="dataHolderBP">{diastolic}</p>
-						<Delete id={id} schema={schema} url={url} getData={getData} />
+						<Delete id={id} url={url}  />
 					</div>
 				);
 			}
