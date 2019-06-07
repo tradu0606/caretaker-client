@@ -14,6 +14,7 @@ import BloodSugar from './components/bloodSugar/BloodSugar';
 import Medications from './components/medications/Medications';
 import Appointment from './components/Appointments/Appointments';
 import NavigationUser from './components/navigation/navigationUser';
+import Metrics from './Metrics/Metrics';
 
 class App extends Component {
 	constructor() {
@@ -83,6 +84,11 @@ class App extends Component {
 						exact
 						path="/doctors"
 						render={(routerProps) => <Doctor {...routerProps} userID={this.state.userID} />}
+					/>
+					<Route
+						exact
+						path="/metrics"
+						render={(routerProps) => <Metrics {...routerProps} userID={this.state.userID} />}
 					/>
 				</Switch>
 			</div>
