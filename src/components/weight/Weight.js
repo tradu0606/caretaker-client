@@ -43,7 +43,7 @@ class Weight extends Component {
 					<div className="dataDiv">
 						<p className="dataHolder">{date}</p>
 						<p className="dataHolder">{weight}</p>
-						<Delete id={id} schema={schema} url={url} />
+						<Delete id={id}  url={url} />
 					</div>
 				);
 			}
