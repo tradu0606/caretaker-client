@@ -37,18 +37,10 @@ class ViewAllNotes extends Component {
 								key={i}
 								symptoms={note.symptoms}
 								name={note.date}
-							/>
-						);
-						return (
-							<FindOneNote
-								userID={this.props.userID}
-								notes={this.state.userNotes}
 								id={note._id}
-								key={i}
-								symptoms={note.symptoms}
-								name={note.date}
 							/>
 						);
+
 					})}
 				</div>
 			);
