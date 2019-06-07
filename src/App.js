@@ -14,7 +14,7 @@ import BloodSugar from './components/bloodSugar/BloodSugar';
 import Medications from './components/medications/Medications';
 import Appointment from './components/Appointments/Appointments';
 import NavigationUser from './components/navigation/navigationUser';
-import Metrics from './Metrics/Metrics';
+import Metrics from './components/Metrics/Metrics';
 
 class App extends Component {
 	constructor() {
@@ -22,6 +22,12 @@ class App extends Component {
 		this.state = {
 			userID: '5ce7eb72607dd50017f52266'
 		};
+	}
+
+	dataFromComponent(data, name){
+		this.setState={
+			name: data
+		}
 	}
 
 	render() {
@@ -88,7 +94,10 @@ class App extends Component {
 					<Route
 						exact
 						path="/metrics"
-						render={(routerProps) => <Metrics {...routerProps} userID={this.state.userID} />}
+						render={(routerProps) => 
+						<Metrics 
+
+						{...routerProps} userID={this.state.userID} />}
 					/>
 				</Switch>
 			</div>
