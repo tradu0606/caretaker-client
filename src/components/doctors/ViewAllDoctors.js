@@ -21,12 +21,6 @@ class ViewAllDoctors extends Component {
 	render() {
 		console.log('ViewAllDoctors: render');
 		if (this.state.userDoctors) {
-			let doctor;
-			if (this.state.selectDoctor) {
-				doctor = this.state.selectDoctor;
-			} else {
-				doctor = <p>Pick a doctor</p>;
-			}
 			return (
 				<div className="doctorLinksContainer">
 					<h3 className="doctorsListTitle">Your Doctors</h3>
@@ -43,7 +37,7 @@ class ViewAllDoctors extends Component {
 				</div>
 			);
 		} else {
-			return <p>Pick a doctor</p>;
+			return <h3 className="doctorsListTitle">Your Doctors</h3>;
 		}
 	}
 }
