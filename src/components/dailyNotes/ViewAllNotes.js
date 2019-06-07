@@ -20,12 +20,13 @@ class ViewAllNotes extends Component {
 	render() {
 		console.log('ViewAllNotes: render');
 		if (this.state.userNotes) {
-			let note;
-			if (this.state.selectNote) {
-				note = this.state.selectNote;
-			} else {
-				note = <p>Select a note</p>;
-			}
+			// let note;
+			// if (this.state.selectNote) {
+			// 	note = this.state.selectNote;
+			// }
+			// else {
+			// 	note = <p>Select a note</p>;
+			// }
 			return (
 				<div className="doctorLinksContainer">
 					<h3 className="doctorsListTitle">Your Notes</h3>
@@ -39,21 +40,21 @@ class ViewAllNotes extends Component {
 								name={note.date}
 							/>
 						);
-						return (
-							<FindOneNote
-								userID={this.props.userID}
-								notes={this.state.userNotes}
-								id={note._id}
-								key={i}
-								symptoms={note.symptoms}
-								name={note.date}
-							/>
-						);
+						// return (
+						// 	<FindOneNote
+						// 		userID={this.props.userID}
+						// 		notes={this.state.userNotes}
+						// 		id={note._id}
+						// 		key={i}
+						// 		symptoms={note.symptoms}
+						// 		name={note.date}
+						// 	/>
+						// );
 					})}
 				</div>
 			);
 		} else {
-			return <p>Select a Note</p>;
+			return <h3 className="doctorsListTitle">Your Notes</h3>;
 		}
 	}
 }

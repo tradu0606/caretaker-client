@@ -21,7 +21,7 @@ class DailyNote extends Component {
 	}
 
 	handleSubmit(e) {
-		e.preventDefault()
+		e.preventDefault();
 		const URL = `https://care-taker-app.herokuapp.com/note/new/${this.props.userID}`;
 		axios
 			.put(URL, {
@@ -62,7 +62,7 @@ class DailyNote extends Component {
 						</form>
 					</div>
 					<div className="viewAllNotes">
-						<ViewAllNotes userID={this.props.userID}/>
+						<ViewAllNotes userID={this.props.userID} />
 					</div>
 				</div>
 			</div>
