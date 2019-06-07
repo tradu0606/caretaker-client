@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Dashboard from '../dashboard/Dashboard';
-import careTakerIcon from '../../images/careTakerIcon.png';
 import './navigation.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons';
+library.add(faHandHoldingHeart);
 
 class Navigation extends Component {
 	render() {
@@ -12,7 +13,7 @@ class Navigation extends Component {
 				<div className="careTakerNavContainer">
 					<Link to="/" className="loginNav" id="CareTaker">
 						{' '}
-						CareTaker <img alt="careTakerIcon" id="careTakerIcon" src={careTakerIcon} />
+						CareTaker <FontAwesomeIcon icon="hand-holding-heart" />
 					</Link>
 				</div>
 				<Link to="/signup" className="loginNav" to="/signup">

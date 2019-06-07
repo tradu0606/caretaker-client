@@ -1,8 +1,6 @@
 #careTakerIcon {
 	width: 25px;
 	height: 20px;
-	/* float: left;
-	margin-left: 2%; */
 	margin-top: 2%;
 	margin-right: 2%;
 }
@@ -28,10 +26,16 @@
 #CareTaker {
 	float: left;
 	margin-right: .5%;
+	color: #429a9f;
+	margin-left: 1%;
 }
 #careTakerNavContainer {
 	background-color: white;
 	border-radius: 40px;
 	border-color: 3px solid rgb(80, 78, 78);
 	color: rgb(237, 189, 138);
+}
+.handHeartIcon {
+	margin-top: 2%;
+	color: #e5583a;
 }

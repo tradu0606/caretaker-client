@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import '../home/Home.css';
-import CareTaker from '../../images/careTakerIcon.png';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons';
+library.add(faHandHoldingHeart);
 
 class Home extends Component {
 	render() {
 		return (
 			<div>
 				<h1 className="homePageTitle">
-					CareTaker <img className="careTakerIconHomePage" src={CareTaker} />
+					CareTaker <FontAwesomeIcon className="handHeartIcon" icon="hand-holding-heart" />
 				</h1>
 				<div className="homePageDescription">
 					<h2>Track Your Health</h2>
