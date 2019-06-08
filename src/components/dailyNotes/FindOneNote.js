@@ -35,7 +35,9 @@ class FindOneNote extends Component {
 			noteDetails = (
 				<div>
 					<h4 className="leftMargin"> Your Notes: {this.state.selectedNote.symptoms}</h4>
-					<Delete id={this.props.id} url="/note/" />
+					<div className="center">
+						<Delete id={this.props.id} url="/note/" />
+					</div>
 				</div>
 			);
 		} else {

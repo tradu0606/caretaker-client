@@ -41,14 +41,9 @@
 	justify-content: center;
 }
 .dataDiv {
-	margin: 0 auto;
 	width: auto;
-	text-align: center;
-}
-p {
-	margin-right: 2%;
-	margin-left: 2%;
-	color: rgb(83, 82, 82);
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .dataHeader {
@@ -66,4 +61,8 @@ button {
 }
 div {
 	margin-right: 2%;
+}
+.dataHolder {
+	margin-left: 10%;
+	text-align: center;
 }

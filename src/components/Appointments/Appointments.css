@@ -22,11 +22,7 @@ select {
 }
 
 .formAppointment {
-	/* display: flex;
-	justify-content: center; */
-	/* border: 7px solid rgb(57, 54, 54); */
 	border-radius: 8px;
-	/* margin: 0 auto; */
 	background-color: #399d96c2;
 	box-shadow: 5px 5px 5px gray;
 	font-family: 'Quicksand', sans-serif;
@@ -75,22 +71,15 @@ table {
 	color: #bf6125;
 }
 #toggleButton {
-	/* width: 300px;
-	height: 50px;
-	margin-top: 3%;
-	margin-bottom: 2%;
-	margin-left: 35%; */
 	background-color: #e5593a;
 	word-wrap: break-word;
 	color: white;
 	font-weight: bolder;
-	/* font-size: 80%; */
 	box-shadow: 5px 5px 5px gray;
 	font-family: 'Quicksand', sans-serif;
 }
 th {
 	color: #399d96c2;
-	padding-left: 3%;
 }
 .tableHeader {
 	color: #bf6125;
@@ -111,5 +100,9 @@ button {
 	font-weight: bolder;
 	font-family: 'Quicksand', sans-serif;
 	border-radius: 4px;
-	margin-right: 2%;
+	margin-right: 5%;
+	margin-left: 1%;
+}
+.doctorNameWidth {
+	width: 35%;
 }

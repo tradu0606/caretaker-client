@@ -1,0 +1,19 @@
+.metricChart {
+	background-color: #44b3ab3f;
+	box-shadow: 5px 5px 5px gray;
+	height: 50%;
+	width: 50%;
+	border-radius: 20px;
+	/* padding-bottom: 2%;
+    display: block; */
+	margin-bottom: 3%;
+	margin-left: 25%;
+}
+.blueH3 {
+	color: #429a9f;
+	font-size: 200%;
+}
+span {
+	color: #429a9f;
+	font-size: 50%;
+}

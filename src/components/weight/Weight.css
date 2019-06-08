@@ -70,18 +70,20 @@ table {
 
 .dataHeader {
 	color: #bf6125;
+	width: auto;
+	text-align: left;
 }
-.dataHolder {
-	padding: 20px;
-}
+
 .dataDiv {
+	width: auto;
 	display: flex;
-	align-items: center;
+	justify-content: space-evenly;
 }
 .dataHolder {
 	width: 50%;
 	padding: 0;
 	margin: 0;
+	text-align: left;
 }
 .formAppointment1 {
 	/* display: flex;

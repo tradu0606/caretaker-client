@@ -41,9 +41,9 @@ class Weight extends Component {
 				console.log(this);
 				return (
 					<div className="dataDiv">
-						<p className="dataHolder">{date}</p>
-						<p className="dataHolder">{weight}</p>
-						<Delete id={id}  url={url} />
+						<div className="dataHolder">{date}</div>
+						<div className="dataHolder">{weight}</div>
+						<Delete id={id} url={url} />
 					</div>
 				);
 			}
@@ -54,8 +54,8 @@ class Weight extends Component {
 			}
 			tempReturn.unshift(
 				<div className="dataDiv dataHeader">
-					<p className="dataHolder">Date</p>
-					<p className="dataHolder">Weight</p>
+					<div>Date</div>
+					<div>Weight</div>
 				</div>
 			);
 			this.setState({
@@ -118,7 +118,7 @@ class Weight extends Component {
 								fill: false,
 								backgroundColor: 'rgb(222, 126, 105)',
 								borderColor: '#399d96c2',
-								label: 'weight',
+								label: 'weight (lbs)',
 								data: weightDataTemp
 							}
 						],
@@ -156,7 +156,7 @@ class Weight extends Component {
 						<p id="errorMessage" style={this.state.errorStyle}>
 							{this.state.errorMessage}
 						</p>
-						<input type="text" id="weight" placeholder="weight" onChange={this.hideMessage} />
+						<input type="text" id="weight" placeholder="weight (lbs)" onChange={this.hideMessage} />
 						<input type="button" className="toggleButton" value="Add New Weight" onClick={this.AddWeight} />
 					</div>
 					<div className="formAppointment2">

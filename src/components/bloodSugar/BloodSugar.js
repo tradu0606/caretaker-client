@@ -103,9 +103,9 @@ class BloodSugar extends Component {
 			function buidHistory(date, sugarLevelBeforeMeal, sugarLevelAfterMeal, _id) {
 				return (
 					<div className="dataDiv">
-						<p className="dataHolder">{date}</p>
-						<p className="dataHolder">{sugarLevelBeforeMeal}</p>
-						<p className="dataHolder">{sugarLevelAfterMeal}</p>
+						<div className="dataHolder">{date}</div>
+						<div className="dataHolder">{sugarLevelBeforeMeal}</div>
+						<div className="dataHolder">{sugarLevelAfterMeal}</div>
 						<Delete id={_id} url="/sugarlevel/" />
 					</div>
 				);
@@ -122,9 +122,9 @@ class BloodSugar extends Component {
 			}
 			tempReturn.unshift(
 				<div className="dataDiv dataHeader">
-					<p className="dataHolder">Date</p>
-					<p className="dataHolder">Blood Sugar Before Meals</p>
-					<p className="dataHolder">Blood Sugar After Meals</p>
+					<div>Date</div>
+					<div>Before</div>
+					<div>After</div>
 				</div>
 			);
 			this.setState({
@@ -144,15 +144,17 @@ class BloodSugar extends Component {
 					<div className="addNewBPDiv form2">
 						<h3>Add New Blood Sugar</h3>
 						<form>
+							<h3>Before Meal</h3>
 							<input
 								type="text"
 								name="sugarLevelBeforeMeal"
-								placeholder="sugar level before meal"
+								placeholder="blood sugar (mg/dL)"
 								onChange={this.handleInput}
 							/>
+							<h3>After Meal</h3>
 							<input
 								type="text"
-								placeholder="sugar level after meal"
+								placeholder="blood sugar (mg/dL)"
 								name="sugarLevelAfterMeal"
 								onChange={this.handleInput}
 							/>

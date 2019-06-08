@@ -8,7 +8,6 @@
 	margin-left: 30%;
 	margin-bottom: 5%;
 	margin-top: 3%;
-	background-color: ;
 	background-color: #e5593a;
 	color: white;
 	font-weight: bolder;
@@ -24,9 +23,8 @@
 	width: 90%;
 	padding-bottom: 2%;
 	box-shadow: 5px 5px 5px gray;
-	/* margin: 0 auto; */
 	margin-left: 5%;
-	margin-bottom: 2%;
+	margin-bottom: 1%;
 	margin-right: 2%;
 }
 .medicationNameOnRecord {
@@ -106,5 +104,5 @@
 	border: 5px solid #399d96c2;
 }
 .center {
-	margin-left: 28%;
+	margin-left: 46%;
 }

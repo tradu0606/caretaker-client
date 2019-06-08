@@ -15,7 +15,7 @@ class Delete extends Component {
 	};
 	render() {
 		return (
-			<div className="center">
+			<div>
 				<button onClick={this.deleteDocument}>Delete</button>
 			</div>
 		);

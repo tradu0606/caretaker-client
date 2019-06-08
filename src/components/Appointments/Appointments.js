@@ -59,8 +59,8 @@ class Appointment extends Component {
 					return (
 						<tr>
 							<th>{appointment.date}</th>
-							<th>{appointment.time}</th>
-							<th>{appointment.doctorName}</th>
+							<th className="date">{appointment.time}</th>
+							<th className="doctorNameWidth">{appointment.doctorName}</th>
 							<th>
 								<Delete id={appointment._id} schema={schema} url={url} getData={getData} />
 							</th>

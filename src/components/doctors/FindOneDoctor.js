@@ -38,7 +38,9 @@ class FindOneDoctor extends Component {
 					<h4 className="leftMargin"> State:{this.state.selectedDoctor[0].state}</h4>
 					<h4 className="leftMargin"> Zip Code:{this.state.selectedDoctor[0].zipcode}</h4>
 					<h4 className="leftMargin paddingBottom"> Phone:{this.state.selectedDoctor[0].doctorPhone}</h4>
-					<Delete id={this.state.selectedDoctor[0]._id}  url='/doctor/' />
+					<div className="center">
+						<Delete id={this.state.selectedDoctor[0]._id} url="/doctor/" />
+					</div>
 				</div>
 			);
 		} else {
